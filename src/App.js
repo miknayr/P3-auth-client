@@ -11,12 +11,29 @@ import {
   Route
 } from 'react-router-dom'
 
+import {
+  useState,
+  useEffect
+} from 'react'
+
 
 function App() {
+  // state holds user data if the user is logged in
+  const [currentUser, setCurrentUser] = useState(null)
+
+  // if navigates away automatically log them in
+  useEffect(() => {})
+
+  // function to log the user out
+  const handleLogout = () => {
+    console.log('log the user out!')
+  }
+
+
   return (
     <Router>
       <header>
-        <Navbar />
+        <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
       </header>
 
 
@@ -31,17 +48,17 @@ function App() {
 
           <Route 
             path="/register"
-            render={props => <Register {...props} /> }
+            render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
           />    
           <Route 
             path="/login"
-            render={props => <Login {...props} /> }
+            render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
           />    
 
           {/* eventually we will do a conditional render here */}
           <Route 
             path="/profile"
-            render={props => <Profile {...props} /> }
+            render={props => <Profile {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
           />    
           
           
