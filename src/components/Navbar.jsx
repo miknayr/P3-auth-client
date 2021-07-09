@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 
-
 export default function Navbar(props) {
   console.log('the props of Navbar:' , props)
   // if the user is logged in

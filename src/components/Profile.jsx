@@ -3,8 +3,6 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from'./Login'
 
-
-
 export default function Profile(props) {
   // state is information from the server
   const [message, setMessage] = useState('')
