@@ -12,6 +12,20 @@ export default function Navbar(props) {
             </div>
             <div className="navbar-nav">
                 <div class="nav-item">
+                    <Link to="/friends" className="nav-link">
+                        Friends
+                    </Link>
+                </div>
+            </div>
+            <div className="navbar-nav">
+                <div class="nav-item">
+                    <Link to="/map" className="nav-link">
+                        Map
+                    </Link>
+                </div>
+            </div>
+            <div className="navbar-nav">
+                <div class="nav-item">
                     <Link to="/" className="nav-link">
                         <span onClick={props.handleLogout}>Logout!</span>
                     </Link>

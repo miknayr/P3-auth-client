@@ -38,7 +38,7 @@ export default function Profile(props) {
   }, [props])
 
 
-  // redirect if  there is no user in state
+  // redirect if there is no user in state
 if(!props.currentUser) return <Redirect to='/' component={ Login } currentUser={ props.currentUser } />
     return (
         <div>
