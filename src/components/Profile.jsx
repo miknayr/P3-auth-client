@@ -38,17 +38,16 @@ export default function Profile(props) {
   }, [props])
 
 
-  // redirect if  there is no user in state
-if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
-  return (
-    <div>
-      <h4>Greetings {props.currentUser.name} 👋</h4>
-      <h5>your email is {props.currentUser.email}</h5>
-      <div>
-        <p>you have a secret message from the authorized user area:</p>
-        <p> {message}</p>
-      </div>
-
-    </div>
-  )
+  // redirect if there is no user in state
+if(!props.currentUser) return <Redirect to='/' component={ Login } currentUser={ props.currentUser } />
+    return (
+        <div>
+            <h4>Greetings {props.currentUser.name} 👋</h4>
+            <h5>your email is {props.currentUser.email}</h5>
+            <div>
+                <p>you have a secret message from the authorized user area:</p>
+                <p> {message}</p>
+            </div>
+        </div>
+    )
 }
