@@ -58,6 +58,7 @@ const friendsData = friends.map((friends, i) => {  //<---- check the currentUser
       <li key={i}>
         <p>Name: {friends.name} </p>
         <p>Location: {friends.location}</p>
+        
         <br/>
       </li>
     </div>
