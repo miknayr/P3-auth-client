@@ -2,23 +2,23 @@ import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
   const loggedIn = (
-    <>
-        <div className="navbar-nav">
-            <div class="nav-item">
-                <Link to="/profile" className="nav-link">
-                    Profile
-                </Link>
+        <>
+            <div className="navbar-nav">
+                <div class="nav-item">
+                    <Link to="/profile" className="nav-link">
+                        Profile
+                    </Link>
+                </div>
             </div>
-        </div>
-        <div className="navbar-nav">
-            <div class="nav-item">
-                <Link to="/" className="nav-link">
-                    <span onClick={props.handleLogout}>Logout!</span>
-                </Link>
+            <div className="navbar-nav">
+                <div class="nav-item">
+                    <Link to="/" className="nav-link">
+                        <span onClick={props.handleLogout}>Logout!</span>
+                    </Link>
+                </div>
             </div>
-        </div>
-    </>
-  )
+        </>
+    )
 
     // if user is logged out
     const loggedOut = (
