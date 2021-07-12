@@ -5,6 +5,7 @@ import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
 import { Map } from './components/Map'
+import { Home } from './components/Home'
 
 import {
     BrowserRouter as Router,
@@ -50,13 +51,17 @@ function App() {
             <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
             <div className="App">
                 <Switch>
+                    <Route
+                        exact path="/"
+                        component={Home}
+                    />
+                    <Route 
+                        path="/login"
+                        render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
+                    />    
                     <Route 
                         path="/register"
                         render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
-                    />    
-                    <Route 
-                        path="/"
-                        render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
                     />    
                     <Route 
                         path="/profile"
