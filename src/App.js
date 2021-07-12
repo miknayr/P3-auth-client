@@ -3,7 +3,7 @@ import Login from './components/Login.jsx'
 import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
-import Welcome from './components/Welcome.jsx'
+import Home from './components/Home.jsx'
 
 import {
     BrowserRouter as Router,
@@ -45,32 +45,44 @@ function App() {
     }
 
   return (
-        <Router>
-            <header>
-                <Navbar  currentUser={currentUser} handleLogout={handleLogout} />
-            </header>
-            <div className="App">
-                <Switch>
-                <Route 
-                    exact path ="/"
-                    component={Welcome}
-                />
-                <Route 
-                    path="/register"
-                    render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
-                />    
-                <Route 
-                    path="/login"
-                    render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
-                />    
-                <Route 
-                    path="/profile"
-                    render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
-                />    
-                </Switch>
-            </div>
-        </Router>
-    );
+    <Router>
+      <header>
+        <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
+      </header>
+
+
+
+      <div className="App">
+        <Switch>
+
+          <Route 
+            exact path ="/"
+            component={Home}
+          />
+
+          <Route 
+            path="/register"
+            render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
+          />    
+          <Route 
+            path="/login"
+            render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
+          />    
+
+          {/* eventually we will do a conditional render here */}
+          <Route 
+            path="/profile"
+            render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+          />    
+          
+          
+          
+        
+        </Switch>     
+
+      </div>
+    </Router>
+  );
 }
 
 export default App;
