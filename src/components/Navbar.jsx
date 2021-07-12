@@ -8,6 +8,7 @@ export default function Navbar(props) {
                     <Link to="/profile" className="nav-link">
                         Profile
                     </Link>
+             
                 </div>
             </div>
             <div className="navbar-nav">

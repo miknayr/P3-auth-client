@@ -5,6 +5,7 @@ import Login from'./Login'
 
 export default function Profile(props) {
   // state is information from the server
+  
   const [message, setMessage] = useState('')
 
   // hit the auth locked route on the backend
@@ -13,7 +14,7 @@ export default function Profile(props) {
       try {
       // get the jwt from local storage
         const token = localStorage.getItem('jwtToken')
-
+        console.log(token)
       // make up the auth headers
         const authHeaders = {
           Authorization: token
@@ -34,12 +35,13 @@ export default function Profile(props) {
 
       }
     }
-    // getPrivateMessage()    
+    getPrivateMessage()    
   }, [props])
 
-
   // redirect if there is no user in state
-if(!props.currentUser) return <Redirect to='/' component={ Login } currentUser={ props.currentUser } />
+  if (!props.currentUser) return <Redirect to='/' component={ Login } currentUser={ props.currentUser } />
+
+
     return (
         <div>
             <h4>Greetings {props.currentUser.name} 👋</h4>
