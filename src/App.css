@@ -6,3 +6,7 @@
     text-align: center;
     margin-top: 200px;
 }
+
+input {
+    margin: 5px;
+}
