@@ -3,7 +3,6 @@ import Login from './components/Login.jsx'
 import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
-import Home from './components/Home.jsx'
 
 import {
     BrowserRouter as Router,
@@ -54,18 +53,12 @@ function App() {
 
       <div className="App">
         <Switch>
-
-          <Route 
-            exact path ="/"
-            component={Home}
-          />
-
           <Route 
             path="/register"
             render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
           />    
           <Route 
-            path="/login"
+            path="/"
             render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
           />    
 

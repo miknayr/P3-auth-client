@@ -7,7 +7,7 @@ export default function Navbar(props) {
     <>
     <Link to="/profile">
     Profile
-   </Link>
+    </Link>
 
   
     <Link to="/">
@@ -19,10 +19,9 @@ export default function Navbar(props) {
     // if user is logged out
     const loggedOut = (
       <>
-       <Link to="/login">
+      <Link to="/">
         Login!
       </Link>
-
       <Link to="/register">
         New account
       </Link>
@@ -30,10 +29,7 @@ export default function Navbar(props) {
     )
   return (
     <nav>
-      <Link to="/">
-        Home
-      </Link>
-    {props.currentUser ? loggedIn : loggedOut}
+        {props.currentUser ? loggedIn : loggedOut}
     </nav>
   )
 }
