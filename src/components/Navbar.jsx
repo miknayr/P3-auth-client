@@ -39,7 +39,6 @@ export default function Navbar(props) {
             </div>
         </>
     )
-
     return (
         <div className="container">
             <nav className="justify-content navbar navbar-expand bg-dark fixed-top navbar-dark">
