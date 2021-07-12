@@ -6,15 +6,15 @@ import Register from './components/Register.jsx'
 import Welcome from './components/Welcome.jsx'
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Redirect
 } from 'react-router-dom'
 
 import {
-  useState,
-  useEffect
+    useState,
+    useEffect
 } from 'react'
 
 import jwt from 'jsonwebtoken'
@@ -29,67 +29,48 @@ function App() {
     const token = localStorage.getItem('jwtToken')
     //if check for token
     if(token) {
-      setCurrentUser(jwt.decode(token))
+        setCurrentUser(jwt.decode(token))
     } else {
-      // else set user in state to be null
-      setCurrentUser(null)
+        // else set user in state to be null
+        setCurrentUser(null)
     }
   }, [])
 
   // function to log the user out
-  const handleLogout = () => {
-    // delete the jwt thats in local storage
-    if(localStorage.getItem('jwtToken')) {
-      localStorage.removeItem('jwtToken')
-      setCurrentUser(null)
+    const handleLogout = () => {
+        if (localStorage.getItem('jwtToken')) {
+            localStorage.removeItem('jwtToken')
+            setCurrentUser(null)
+        }
     }
 
-    // set the user in the state to be null
-
-
-    console.log('log the user out!')
-  }
-
-
   return (
-    <Router>
-      <header>
-        <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
-      </header>
-
-
-
-      <div className="App">
-        <Switch>
-
-          <Route 
-            exact path ="/"
-            component={Welcome}
-          />
-
-          <Route 
-            path="/register"
-            render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
-          />    
-          <Route 
-            path="/login"
-            render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
-          />    
-
-          {/* eventually we will do a conditional render here */}
-          <Route 
-            path="/profile"
-            render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
-          />    
-          
-          
-          
-        
-        </Switch>     
-
-      </div>
-    </Router>
-  );
+        <Router>
+            <header>
+                <Navbar  currentUser={currentUser} handleLogout={handleLogout} />
+            </header>
+            <div className="App">
+                <Switch>
+                <Route 
+                    exact path ="/"
+                    component={Welcome}
+                />
+                <Route 
+                    path="/register"
+                    render={props => <Register {...props} currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
+                />    
+                <Route 
+                    path="/login"
+                    render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
+                />    
+                <Route 
+                    path="/profile"
+                    render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+                />    
+                </Switch>
+            </div>
+        </Router>
+    );
 }
 
 export default App;
