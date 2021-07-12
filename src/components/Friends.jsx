@@ -43,13 +43,13 @@ export default function Profile(props) {
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/friends`) // <--- change to what jackie makes for backend get-route
       .then((response) => {
-        setStarships(response.data.results)
+        setFriends(response.data.results)
         console.log(response.data.results)
       })
       .catch((err) => console.log(err))
     }, [])
 
-const friendsData = currentUser.map((friends, i) => {  //<---- check the currentUser.map data
+const friendsData = friends.map((friends, i) => {  //<---- check the currentUser.map data
   // console.log('🚀 friend name: ' + friends.name )
   // console.log('🚀 friend location: ' + friends.location )
 
@@ -75,7 +75,7 @@ if(!props.currentUser) return <Redirect to='/login' component={ Login } currentU
       <h4>Greetings {props.currentUser.name} 👋</h4>
       <h5>Your friends {props.currentUser.email}</h5>
       <li>
-          {props.currentUser.friends}
+          {friendsData}
       </li>
  
 

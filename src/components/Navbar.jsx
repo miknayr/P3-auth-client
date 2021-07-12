@@ -8,6 +8,9 @@ export default function Navbar(props) {
     <Link to="/profile">
     Profile
    </Link>
+    <Link to='/friends'>
+      Friends
+    </Link>
 
   
     <Link to="/">
@@ -19,7 +22,7 @@ export default function Navbar(props) {
     // if user is logged out
     const loggedOut = (
       <>
-       <Link to="/login">
+      <Link to="/login">
         Login!
       </Link>
 

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
 import Home from './components/Home.jsx'
+import Friends from './components/Friends.jsx'
 
 import {
   BrowserRouter as Router,
@@ -80,6 +81,10 @@ function App() {
           <Route 
             path="/profile"
             render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+          />    
+          <Route 
+            path="/friends"
+            render={props => currentUser ? <Friends {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
           />    
           
           
