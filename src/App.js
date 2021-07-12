@@ -3,7 +3,7 @@ import Login from './components/Login.jsx'
 import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
-import Welcome from './components/Welcome.jsx'
+import Home from './components/Home.jsx'
 
 import {
   BrowserRouter as Router,
@@ -64,7 +64,7 @@ function App() {
 
           <Route 
             exact path ="/"
-            component={Welcome}
+            component={Home}
           />
 
           <Route 
