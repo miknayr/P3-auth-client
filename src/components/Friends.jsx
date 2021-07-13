@@ -75,33 +75,47 @@ export default function Friends(props) {
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     return (
         <div>
-        <h4>Greetings {props.currentUser.name} 👋</h4>
+        <h1>Hey {props.currentUser.name} 👋</h1>
         
           <div>
             <li>
                 {/* {friendsData} */}
 
                <div>
-                <p>Name: Ryan Kim</p>
-                  <p>Event: Code-Chella</p>
+                <h3>Name: Ryan Kim <input type='radio'/> </h3>
+                
                   <p>Location: The Cloud</p>
-                  <p>zoneList: Zone 1</p>
                   <br/>
                </div>
 
                <div>
-                <p>Name: Terry Zhou</p>
-                  <p>Event: Code-Chella</p>
+                <h3>Name: Terry Zhou <input type='radio'/> </h3>
                   <p>Location: The Cloud</p>
-                  <p>zoneList: Food Truck A</p>
+                  <br/>
+                  
+               </div>
+
+               <div>
+                <h3>Name: Jackie  Dinh <input type='radio'/> </h3>
+                  <p>Location: The Cloud</p>
                   <br/>
                </div>
 
                <div>
-                <p>Name: June (So Yun) Jung</p>
-                  <p>Event: Design-Chella</p>
+                <h3>Name: Matt Velasco <input type='radio'/> </h3>
+                  <p>Location: The Cloud</p>
+                  <br/>
+               </div>
+
+               <div>
+                <h3>Name: June (So Yun) Jung <input type='radio'/> </h3>
                   <p>Location: The Skies</p>
-                  <p>zoneList: Food Truck B</p>
+                  <br/>
+               </div>
+
+               <div>
+                <h3>Name: Emmanuel Cruz <input type='radio'/> </h3>
+                  <p>Location: The Skies</p>
                   <br/>
                </div>
             </li>
