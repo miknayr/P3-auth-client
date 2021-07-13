@@ -4,6 +4,7 @@ import axios from 'axios'
 import Login from'./Login'
 
 export default function Friends(props) {
+    console.log("FRIENDS PROPS", props)
     // state is information from the server
     const [message, setMessage] = useState('')
 
@@ -20,7 +21,7 @@ export default function Friends(props) {
             }
                 
         // hit the auth locked enpoint
-            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/auth-locked`, {headers: authHeaders})
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`, {headers: authHeaders})
             
         // set state with the data from the server
 
@@ -41,7 +42,8 @@ export default function Friends(props) {
     const [friends, setFriends] = useState([])
     
     useEffect(() => {
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/friends`) // <--- change to what jackie makes for backend get-route
+        console.log(props.currentUser.id, "PROPS CURRENT")
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
         .then((response) => {
             setFriends(response.data.results)
             console.log(response.data.results, "HELLO")
@@ -49,23 +51,23 @@ export default function Friends(props) {
         .catch((err) => console.log(err))
         }, [])
 
-    const friendsData = friends.map((friends, i) => {  //<---- check the currentUser.map data
-    // console.log('🚀 friend name: ' + friends.name )
-    // console.log('🚀 friend location: ' + friends.location )
+    // const friendsData = friends.map((friends, i) => {  //<---- check the currentUser.map data
+    // // console.log('🚀 friend name: ' + friends.name )
+    // // console.log('🚀 friend location: ' + friends.location )
 
-    return (
-        <div class="shipCard">
-          <li key={i}>
-              <p>Name: Ryan Kim</p>
-              <p>Event: Code-Chella</p>
-              <p>Location: The Cloud</p>
-              <p>zoneList: Zone 1</p>
-              <br/>
-          </li>
+    // return (
+    //     <div class="shipCard">
+    //       <li key={i}>
+    //           <p>Name: Ryan Kim</p>
+    //           <p>Event: Code-Chella</p>
+    //           <p>Location: The Cloud</p>
+    //           <p>zoneList: Zone 1</p>
+    //           <br/>
+    //       </li>
 
-        </div>
-    )
-    })
+    //     </div>
+    // )
+    // })
 
 
    // redirect if  there is no user in state
@@ -76,7 +78,7 @@ export default function Friends(props) {
         
           <div>
             <li>
-                {friendsData}
+                {/* {friendsData} */}
 
                <div>
                 <h3>Name: Ryan Kim <input type='radio'/> </h3>
