@@ -1,38 +1,198 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+    position: relative;
+    margin: 0 auto;
+    border: 5px solid black;
+    width: 380px;
+    height: 700px;
+    border-radius: 25px;
+    padding: 10px;
+    overflow: scroll;
+    background-image: url("./images/backsplash3.png");
+    background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.log-box {
+    text-align: center;
+    background-color: rgb(117,77,180);
+    margin: 120px 10px auto 10px;
+    padding-bottom: 10px;
+    opacity: 80%;
+    border-radius: 15px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-box {
+    text-align: left;
+    display: flex;
+    justify-content: center;
 }
 
-.App-link {
-  color: #61dafb;
+.log-header {
+    text-transform: uppercase;
+    font-size: 54px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: rgb(10,0,61);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.h6-box {
+    margin: 10px auto;
+}
+
+.h6-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: rgb(249,144,59);
+}
+
+.login-input {
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(249,144,59);
+    width: 260px;
+    font-size: 15px;
+}
+
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(249,144,59);
+}
+
+.login-input:focus {
+    color: rgb(249,144,59);
+}
+
+#forgot {
+    color: rgb(249,144,59);
+    text-align: left;
+    margin-left: 20px;
+}
+
+::placeholder {
+    color: rgb(249,144,59);
+}
+
+.btn {
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 120px;
+    background-color: rgb(57,17,120);
+    padding: 0 12px;
+    color: white;
+    border: none;
+}
+
+.btn:hover {
+    opacity: 70%;
+}
+
+.nav-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    margin: auto 3px;
+    color: black;
+    border-radius: 50%;
+}
+
+.fa-map-marker {
+    background-color: rgb(253,146,140);
+}
+
+.fa-user {
+    background-color: rgb(217,68,34);
+}
+
+.fa-user-friends {
+    background-color: rgb(245,141,58);
+}
+
+.fa-clock {
+    background-color: rgb(219,203,71);
+}
+
+.fa-sign-out {
+    background-color: rgb(138,138,138);
+}
+
+.icon:hover {
+    opacity: 70%;
+}
+
+.map-box {
+    text-align: center;
+}
+
+img {
+    border-radius: 15px;
+    width: 330px;
+    border-radius: 5px solid grey;
+}
+
+nav {
+    z-index: 1;
+    position: fixed;
+    top: 650px;
+    left: 125px;
+    width: 260px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: rgb(119,74,181);
+    opacity: 80%;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav-item:hover {
+    opacity: 80%;
+    text-decoration: none;
+}
+
+p {
+    color: white;
+    font-size: 10px;
+}
+
+.navbar {
+    padding: 0.5rem;
+}
+
+.friend-header {
+    text-align: center;
+    margin: 50px -10px 30px -10px;
+    padding: 10px;
+    color: rgb(53,34,109);
+    background-color: rgb(182,156,206);
+}
+
+.friend-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 3px 10px auto 20px;
+    color: rgb(249,144,59);
+    background-color: rgb(35,18,95);
+}
+
+.friend-box {
+    display: grid;
+    grid-template-columns: 50px 250px 50px;
+    margin-top: 20px;
 }
