@@ -87,6 +87,7 @@ export default function Login(props) {
                     className="btn login-input"
                 />
             </form>
+            <p id="forgot">Forgot Your Password?</p>
         </div>
         </main>
     )

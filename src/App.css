@@ -13,10 +13,17 @@ main {
     border-radius: 25px;
     padding: 10px;
     overflow: scroll;
+    background-image: url("./images/backsplash3.png");
+    background-size: cover;
 }
 
 .log-box {
     text-align: center;
+    background-color: rgb(117,77,180);
+    margin: 120px 10px auto 10px;
+    padding-bottom: 10px;
+    opacity: 80%;
+    border-radius: 15px;
 }
 
 .header-box {
@@ -29,8 +36,8 @@ main {
     text-transform: uppercase;
     font-size: 54px;
     font-weight: bold;
-    margin-top: 100px;
-    color: rgb(34,19,91);
+    margin-top: 10px;
+    color: rgb(10,0,61);
 }
 
 .h6-box {
@@ -41,23 +48,45 @@ main {
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
-    color: rgb(34,19,91);
+    color: rgb(249,144,59);
 }
 
 .login-input {
-    margin: 5px;
+    margin: 10px;
     border-radius: 5px;
-    border: 2px solid rgb(195,195,195);
+    border: 1px solid rgb(249,144,59);
     width: 260px;
-    font-size: 20px;
+    font-size: 15px;
+}
+
+.login-input:-webkit-autofill,
+.login-input:-webkit-autofill:hover,
+.login-input:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(249,144,59);
+}
+
+.login-input:focus {
+    color: rgb(249,144,59);
+}
+
+#forgot {
+    color: rgb(249,144,59);
+    text-align: left;
+    margin-left: 20px;
+}
+
+::placeholder {
+    color: rgb(249,144,59);
 }
 
 .btn {
-    font-size: 20px;
-    width: 125px;
-    background-color: rgb(117,77,180);
-    padding: 0 15px;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 120px;
+    background-color: rgb(57,17,120);
+    padding: 0 12px;
     color: white;
+    border: none;
 }
 
 .btn:hover {
@@ -106,7 +135,6 @@ main {
 img {
     border-radius: 15px;
     width: 330px;
-    height: 650px;
     border-radius: 5px solid grey;
 }
 
@@ -118,7 +146,7 @@ nav {
     width: 260px;
     height: 80px;
     border-radius: 15px;
-    background-color: rgb(72,52,107);
+    background-color: rgb(119,74,181);
     opacity: 80%;
 }
 
@@ -127,6 +155,11 @@ nav {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.nav-item:hover {
+    opacity: 80%;
+    text-decoration: none;
 }
 
 p {
@@ -150,8 +183,8 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
     border-radius: 50%;
     margin: 3px 10px auto 20px;
     color: rgb(249,144,59);
