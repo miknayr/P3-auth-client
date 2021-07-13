@@ -13,9 +13,14 @@ export const Events = (props) => {
 
     return (
         <div>
-            <u>
-                Hello from Map!
-            </u>
+            <ul>
+                <li>Code-Chella</li>
+                <li>EDC</li>
+                <li>Life is Beautiful</li>
+                <li>Day N Vegas</li>
+                <li>iHeartRadio Music Festival</li>
+                <li>Beyond Wonderland</li>
+            </ul>
         </div>
     )
 }
