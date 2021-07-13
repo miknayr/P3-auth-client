@@ -13,9 +13,14 @@ export default function Events(props) {
 
     return (
         <div>
-            <h1>
-                Hello from Events!
-            </h1>
+            <ul>
+                <li>Code-Chella</li>
+                <li>EDC</li>
+                <li>Life is Beautiful</li>
+                <li>Day N Vegas</li>
+                <li>iHeartRadio Music Festival</li>
+                <li>Beyond Wonderland</li>
+            </ul>
         </div>
     )
 }
