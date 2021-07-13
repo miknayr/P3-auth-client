@@ -68,10 +68,7 @@ export default function Friends(props) {
     })
 
 
-
-
-
-    // redirect if  there is no user in state
+   // redirect if  there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     return (
         <div>
@@ -79,7 +76,7 @@ export default function Friends(props) {
         
           <div>
             <li>
-                {/* {friendsData} */}
+                {friendsData}
 
                <div>
                 <h3>Name: Ryan Kim <input type='radio'/> </h3>
