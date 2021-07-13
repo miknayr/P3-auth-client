@@ -4,8 +4,8 @@ import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
-import { Map } from './components/Map'
-import { Home } from './components/Home'
+import Event from './components/Events'
+
 
 import {
     BrowserRouter as Router,
@@ -68,8 +68,8 @@ function App() {
                         render={props => currentUser ? <Friends {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
                     />    
                     <Route 
-                        path="/map"
-                        render={props => currentUser ? <Map {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+                        path="/events"
+                        render={props => currentUser ? <Events {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
                     />    
                 </Switch>     
             </div>

@@ -19,7 +19,7 @@ export default function Navbar(props) {
             </div>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/map">
+                    <Link to="/events">
                         <div class="icon fas fa-map"></div>
                     </Link>
                 </div>

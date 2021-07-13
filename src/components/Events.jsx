@@ -1,8 +1,8 @@
-import { useState, useEffect } from "react"
+// import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import Login from'./Login'
 
-export const Map = (props) => {
+export const Events = (props) => {
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
