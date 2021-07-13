@@ -24,6 +24,7 @@ main {
     padding-bottom: 10px;
     opacity: 80%;
     border-radius: 15px;
+    overflow: scroll;
 }
 
 .header-box {
@@ -72,7 +73,7 @@ main {
 #forgot {
     color: rgb(249,144,59);
     text-align: left;
-    margin-left: 20px;
+    margin-left: 35px;
 }
 
 ::placeholder {
@@ -195,4 +196,16 @@ p {
     display: grid;
     grid-template-columns: 50px 250px 50px;
     margin-top: 20px;
+}
+
+.event-box {
+    background-color: white;
+    margin: 20px 10px;
+    padding: 20px auto;
+    border-radius: 15px;
+}
+
+.event-box p {
+    color: black;
+    font-size: 20px;
 }

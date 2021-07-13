@@ -63,8 +63,7 @@ export default function Login(props) {
                         value={email}
                         className="login-input"
                         required
-                        />
-                        <br/>
+                    />
                     <input
                         id='password-input'
                         type='password'

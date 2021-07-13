@@ -13,19 +13,20 @@ export default function Events(props) {
 
     return (
         <main>
-            <ul>
-                <li>
-                    <div>
-                      <input type="checkbox"/>
-                         Adriana is at 8
-                     </div>
-                </li>
-                <li>Terry is at 8</li>
-                <li>Life is Beautiful</li>
-                <li>Day N Vegas</li>
-                <li>iHeartRadio Music Festival</li>
-                <li>Beyond Wonderland</li>
-            </ul>
+            <div className="log-box">
+                <div className="event-box">
+                    <div>2:30pm</div>
+                    <p>Post-Lunch Check-In</p>
+                </div>
+                <div className="event-box">
+                    <div>5:00pm</div>
+                    <p>VIP Dinner Check-In</p>
+                </div>
+                <div className="event-box">
+                    <div>7:30pm</div>
+                    <p>Rufus Du Sol @Stage 7!!</p>
+                </div>
+            </div>
         </main>
     )
 }
