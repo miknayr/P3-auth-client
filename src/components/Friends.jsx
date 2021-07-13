@@ -34,19 +34,20 @@ export default function Friends(props) {
         // getPrivateMessage()    
     }, [props])
 
-    let friendList = ["Ryan Kim", "Terry Zhou", "Jackie Dinh", "Matt Velasco", "June (So Yun) Jung", "Emmanuel Cruz"]
-    const friendListMap = friendList.map(e => {
-        return (
-            <div className="friend-box">
-                <div className="friend-icon fas fa-user"></div>
-                <h4>{e}</h4>
-                <input 
-                    type='checkbox'
-                    className="friend-button"
-                />
-            </div>
-        )
-    })
+    // let friendList = ["Ryan Kim", "Terry Zhou", "Jackie Dinh", "Matt Velasco", "June (So Yun) Jung", "Emmanuel Cruz"]
+    // const friendListMap = friendList.map(e => {
+    //     return (
+    //         <div className="friend-box">
+    //             <div className="friend-icon fas fa-user"></div>
+    //             <h4>{e}</h4>
+    //             <input 
+    //                 type='checkbox'
+    //                 className="friend-button"
+    //             />
+    //         </div>
+    //     )
+    // })
+    
     
     useEffect(() => {
         console.log(props.currentUser.id, "PROPS CURRENT")
@@ -57,12 +58,25 @@ export default function Friends(props) {
         .catch((err) => console.log(err))
     }, [])
 
+    
 
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
+    // return (
+    //     <main>
+    //     <h4 className="friend-header">Invite Friends...</h4>
+    //         {friendListMap}
+    //     </main>
+    // )
     return (
         <main>
-        <h4 className="friend-header">Invite Friends...</h4>
-            {friendListMap}
+            <div className="container">
+                <div className="map-box">
+                    <img src='/friendspin.png' alt="friend-map"/>
+                </div>
+            </div>
         </main>
     )
+
+
 }
+
