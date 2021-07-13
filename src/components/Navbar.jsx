@@ -6,18 +6,20 @@ export default function Navbar(props) {
             <nav className="navbar">
                 <div className="navbar-nav">
                     <div className="nav-item">
-                        <div className="nav-icon fa fa-map-marker"></div>
-                        <p>Ping Me</p>
-                    </div>
-                </div>
-                <div className="navbar-nav">
-                    <div className="nav-item">
                         <Link to="/profile">
                             <div className="nav-icon fas fa-user"></div>
-                            <p>Profile</p>
+                            <p>Home</p>
                         </Link>
                     </div>
                 </div>
+
+                {/* <div className="navbar-nav">
+                    <div className="nav-item">
+                        <div className="nav-icon fa fa-map-marker"></div>
+                        <p>friends </p>
+                    </div>
+                </div> */}
+
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/friends">
@@ -26,6 +28,7 @@ export default function Navbar(props) {
                         </Link>
                     </div>
                 </div>
+
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/events">
