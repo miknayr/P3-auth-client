@@ -4,7 +4,7 @@ import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
-import Event from './components/Events'
+import Events from './components/Events.jsx'
 
 
 import {

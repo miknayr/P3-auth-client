@@ -2,7 +2,7 @@
 import { Redirect } from 'react-router-dom'
 import Login from'./Login'
 
-export const Events = (props) => {
+export default function Events(props) {
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -14,7 +14,7 @@ export const Events = (props) => {
     return (
         <div>
             <h1>
-                Hello from Map!
+                Hello from Events!
             </h1>
         </div>
     )
