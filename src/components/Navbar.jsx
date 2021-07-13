@@ -4,17 +4,17 @@ export default function Navbar(props) {
     const loggedIn = (
         <>
             <nav className="navbar">
-                <div className="navbar-nav">
+                {/* <div className="navbar-nav">
                     <div className="nav-item">
 
                         <div className="nav-icon fa fa-map-marker"></div>
                         <p>Ping Me</p>
                     </div>
-                </div>
+                </div> */}
                 <div className="navbar-nav">
                     <Link to="/profile" className="nav-item">
                         <div className="nav-icon fas fa-user"></div>
-                        <p>Profile</p>
+                        <p>Home</p>
                     </Link>
 
                 </div>
@@ -39,12 +39,12 @@ export default function Navbar(props) {
                         <p>Events</p>
                     </Link>
                 </div>
-                <div className="navbar-nav">
+                {/* <div className="navbar-nav">
                     <Link to="/" className="nav-item">
                         <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}></div>
                         <p>Logout</p>
                     </Link>
-                </div>
+                </div> */}
             </nav>
         </>
     )
