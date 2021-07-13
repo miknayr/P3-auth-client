@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
+
 import axios from 'axios'
 import Login from'./Login'
 
@@ -33,6 +34,9 @@ export default function Profile(props) {
     
     return (
         <div className="container">
+          {/* <div>
+          <img src='/fakemap.png' alt="image" />
+          </div> */}
             <h4>Greetings {props.currentUser.name} 👋</h4>
             <h5>your email is {props.currentUser.email}</h5>
             <div>
