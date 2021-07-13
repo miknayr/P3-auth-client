@@ -13,9 +13,9 @@ export const Map = (props) => {
 
     return (
         <div>
-            <h1>
+            <u>
                 Hello from Map!
-            </h1>
+            </u>
         </div>
     )
 }
