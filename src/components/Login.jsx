@@ -43,21 +43,25 @@ export default function Login(props) {
 
   return (
         <div className="log-box">
-            <h3 className="log-header">Login to your Account</h3>
+            <h2 className="log-header">Totemize</h2>
             <p>{message}</p>
+            <h6>GET LOST</h6>
+            <h6>MEET AGAIN</h6>
+            
             <form onSubmit={handleSubmit}>
                 <div>
                     <input 
                         id='email-input'
                         type='email'
-                        placeholder='Enter Your Email Here'
+                        placeholder='Email'
                         onChange ={e => setEmail(e.target.value)}
                         value={email}
                         />
+                        <br/>
                     <input
                         id='password-input'
                         type='password'
-                        placeholder='********'
+                        placeholder='Password'
                         onChange = {e => setPassword(e.target.value)}
                         value={password}
                     />
@@ -65,6 +69,11 @@ export default function Login(props) {
                 <input
                     type='submit'
                     value='Login'
+                />
+                
+                <input
+                    type='submit'
+                    value='Register'
                 />
             </form>
         </div>
