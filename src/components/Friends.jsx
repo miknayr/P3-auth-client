@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from'./Login'
 
-export default function Profile(props) {
+export default function Friends(props) {
     // state is information from the server
     const [message, setMessage] = useState('')
 
@@ -55,11 +55,14 @@ export default function Profile(props) {
 
     return (
         <div class="shipCard">
-        <li key={i}>
-            <p>Name: {friends.name} </p>
-            <p>Location: {friends.location}</p>
-            <br/>
-        </li>
+          <li key={i}>
+              <p>Name: Ryan Kim</p>
+              <p>Event: Code-Chella</p>
+              <p>Location: The Cloud</p>
+              <p>zoneList: Zone 1</p>
+              <br/>
+          </li>
+
         </div>
     )
     })
@@ -73,10 +76,36 @@ export default function Profile(props) {
     return (
         <div>
         <h4>Greetings {props.currentUser.name} 👋</h4>
-        <h5>Your friends {props.currentUser.email}</h5>
-        <li>
-            {friendsData}
-        </li>
+        
+          <div>
+            <li>
+                {/* {friendsData} */}
+
+               <div>
+                <p>Name: Ryan Kim</p>
+                  <p>Event: Code-Chella</p>
+                  <p>Location: The Cloud</p>
+                  <p>zoneList: Zone 1</p>
+                  <br/>
+               </div>
+
+               <div>
+                <p>Name: Terry Zhou</p>
+                  <p>Event: Code-Chella</p>
+                  <p>Location: The Cloud</p>
+                  <p>zoneList: Food Truck A</p>
+                  <br/>
+               </div>
+
+               <div>
+                <p>Name: June (So Yun) Jung</p>
+                  <p>Event: Design-Chella</p>
+                  <p>Location: The Skies</p>
+                  <p>zoneList: Food Truck B</p>
+                  <br/>
+               </div>
+            </li>
+          </div>
     
 
         </div>
