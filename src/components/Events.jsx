@@ -12,7 +12,7 @@ export default function Events(props) {
     )
 
     return (
-        <div>
+        <main>
             <ul>
                 <li>Code-Chella</li>
                 <li>EDC</li>
@@ -21,6 +21,6 @@ export default function Events(props) {
                 <li>iHeartRadio Music Festival</li>
                 <li>Beyond Wonderland</li>
             </ul>
-        </div>
+        </main>
     )
 }

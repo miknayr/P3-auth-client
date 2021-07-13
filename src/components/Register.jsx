@@ -45,7 +45,6 @@ const Register = (props) => {
     return (
         <div className="log-box">
             <h3 className="log-header">Register for an Account</h3>
-            <p>{message}</p>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input

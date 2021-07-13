@@ -51,31 +51,27 @@ export default function Friends(props) {
         .catch((err) => console.log(err))
         }, [])
 
-    // const friendsData = friends.map((friends, i) => {  //<---- check the currentUser.map data
-    // // console.log('🚀 friend name: ' + friends.name )
-    // // console.log('🚀 friend location: ' + friends.location )
 
-    // return (
-    //     <div class="shipCard">
-    //       <li key={i}>
-    //           <p>Name: Ryan Kim</p>
-    //           <p>Event: Code-Chella</p>
-    //           <p>Location: The Cloud</p>
-    //           <p>zoneList: Zone 1</p>
-    //           <br/>
-    //       </li>
+    const friendsData = friends.map((friends, i) => {  //<---- check the currentUser.map data
+    // console.log('🚀 friend name: ' + friends.name )
+    // console.log('🚀 friend location: ' + friends.location )
 
-    //     </div>
-    // )
-    // })
+    return (
+        <li key={i}>
+            <p>Name: Ryan Kim</p>
+            <p>Event: Code-Chella</p>
+            <p>Location: The Cloud</p>
+            <p>zoneList: Zone 1</p>
+            <br/>
+        </li>
+    )
+    })
+    // redirect if  there is no user in state
 
-
-   // redirect if  there is no user in state
     if(!props.currentUser) return <Redirect to='/login' component={ Login } currentUser={ props.currentUser } />
     return (
-        <div>
-        <h1>Hey {props.currentUser.name} 👋</h1>
-        
+        <main>
+        <h1>{props.currentUser.name}'s Friend List</h1>
           <div>
             <li>
                 {/* {friendsData} */}
@@ -121,6 +117,6 @@ export default function Friends(props) {
           </div>
     
 
-        </div>
+        </main>
     )
 }
