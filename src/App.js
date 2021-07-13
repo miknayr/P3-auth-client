@@ -6,8 +6,6 @@ import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
 import Events from './components/Events'
 
-
-
 import {
     BrowserRouter as Router,
     Switch,
