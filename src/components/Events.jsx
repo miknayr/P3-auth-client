@@ -1,31 +1,22 @@
 // import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 import Login from'./Login'
-
+import { useState } from 'react'
 export default function Events(props) {
-    if (!props.currentUser) return (
-        <Redirect 
-            to='/' 
-            component={ Login } 
-            currentUser={ props.currentUser } 
-        />
-    )
 
     return (
-        <main>
-            <ul>
-                <li>
-                    <div>
-                      < input type="checkbox"/>
-                         Adriana is at 8
-                     </div>
-                </li>
-                <li>Terry is at 8</li>
-                <li>Life is Beautiful</li>
-                <li>Day N Vegas</li>
-                <li>iHeartRadio Music Festival</li>
-                <li>Beyond Wonderland</li>
-            </ul>
-        </main>
+    <div>    
+    <h1>Show Checkboxes</h1>
+        <form action="/">
+            <input type="checkbox"/>
+            <label> Jackie at 8PM at Food Trucks B</label><br />
+            <input type="checkbox"/>
+            <label> Terry at 6PM at Stage 1</label><br />
+            <input type="checkbox"/>
+            <label> Ryan at 11PM at Beers</label><br />
+            <input type="submit" value="Submit"/>
+        </form>
+    </div>
     )
 }
