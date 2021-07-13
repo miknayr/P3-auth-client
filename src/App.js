@@ -51,12 +51,8 @@ function App() {
             <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
             <div className="App">
                 <Switch>
-                    <Route
-                        exact path="/"
-                        component={Home}
-                    />
                     <Route 
-                        path="/login"
+                        exact path="/"
                         render={props => <Login {...props}  currentUser={ currentUser } setCurrentUser={setCurrentUser} /> }
                     />    
                     <Route 

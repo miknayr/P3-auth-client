@@ -5,30 +5,29 @@ export default function Navbar(props) {
         <>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/profile" className="nav-link">
-                        Profile
-                    </Link>
-             
-                </div>
-            </div>
-            <div className="navbar-nav">
-                <div className="nav-item">
-                    <Link to="/friends" className="nav-link">
-                        Friends
+                    <Link to="/profile">
+                        <div class="icon fas fa-user"></div>
                     </Link>
                 </div>
             </div>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/map" className="nav-link">
-                        Map
+                    <Link to="/friends">
+                        <div class="icon fas fa-user-friends"></div>
                     </Link>
                 </div>
             </div>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/" className="nav-link">
-                        <span onClick={props.handleLogout}>Logout!</span>
+                    <Link to="/map">
+                        <div class="icon fas fa-map"></div>
+                    </Link>
+                </div>
+            </div>
+            <div className="navbar-nav">
+                <div className="nav-item">
+                    <Link to="/">
+                        <div class="icon fa fa-sign-out" onClick={props.handleLogout}></div>
                     </Link>
                 </div>
             </div>
@@ -39,15 +38,15 @@ export default function Navbar(props) {
         <>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/login" className="nav-link">
-                        Login!
+                    <Link to="/">
+                        <div className="icon fa fa-sign-in"></div>
                     </Link>
                 </div>
             </div>
             <div className="navbar-nav">
                 <div className="nav-item">
-                    <Link to="/register" className="nav-link">
-                        New account
+                    <Link to="/register">
+                        <div className="icon fa fa-user-plus"></div>
                     </Link>
                 </div>
             </div>
@@ -56,7 +55,7 @@ export default function Navbar(props) {
 
     return (
         <div className="container">
-            <nav className="navbar navbar-expand bg-dark fixed-top navbar-dark">
+            <nav className="navbar navbar-expand bg-dark fixed-bottom navbar-dark">
                 {props.currentUser ? loggedIn : loggedOut}
             </nav>
         </div>

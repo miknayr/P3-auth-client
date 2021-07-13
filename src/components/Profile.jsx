@@ -9,12 +9,8 @@ export default function Profile(props) {
     useEffect(() => {
         const getPrivateMessage = async () => {
         try {
-            // get jwt from localStorage
             const token = localStorage.getItem('jwtToken')
-            console.log(token)
-            // make up auth headers
             const authHeaders = { Authorization: token }
-            // hit auth-locked endpoint
             const response = await axios.get(
                 `${process.env.REACT_APP_SERVER_URL}/api-v1/users/auth-locked`,
                 { headers: authHeaders }
@@ -29,7 +25,7 @@ export default function Profile(props) {
 
     if (!props.currentUser) return (
         <Redirect 
-            to='/login' 
+            to='/' 
             component={ Login } 
             currentUser={ props.currentUser }
         />

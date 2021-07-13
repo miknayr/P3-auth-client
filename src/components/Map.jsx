@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
-import axios from 'axios'
 import Login from'./Login'
 
 export const Map = (props) => {
@@ -11,7 +10,7 @@ export const Map = (props) => {
             currentUser={ props.currentUser } 
         />
     )
-    
+
     return (
         <div>
             <h1>
