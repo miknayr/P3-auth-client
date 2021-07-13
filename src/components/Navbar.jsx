@@ -6,14 +6,14 @@ export default function Navbar(props) {
             <nav className="navbar">
                 <div className="navbar-nav">
                     <div className="nav-item">
-                        <div className="icon fa fa-map-marker"></div>
+                        <div className="nav-icon fa fa-map-marker"></div>
                         <p>Ping Me</p>
                     </div>
                 </div>
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/profile">
-                            <div className="icon fas fa-user"></div>
+                            <div className="nav-icon fas fa-user"></div>
                             <p>Profile</p>
                         </Link>
                     </div>
@@ -21,7 +21,7 @@ export default function Navbar(props) {
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/friends">
-                            <div className="icon fas fa-user-friends"></div>
+                            <div className="nav-icon fas fa-user-friends"></div>
                             <p>Friends</p>
                         </Link>
                     </div>
@@ -29,7 +29,7 @@ export default function Navbar(props) {
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/events">
-                            <div className="icon fas fa-clock"></div>
+                            <div className="nav-icon fas fa-clock"></div>
                             <p>Events</p>
                         </Link>
                     </div>
@@ -37,7 +37,7 @@ export default function Navbar(props) {
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/">
-                            <div class="icon fa fa-sign-out" onClick={props.handleLogout}></div>
+                            <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}></div>
                             <p>Logout</p>
                         </Link>
                     </div>
@@ -80,14 +80,14 @@ export default function Navbar(props) {
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/">
-                            <div className="icon fa fa-sign-in"></div>
+                            <div className="nav-icon fa fa-sign-in"></div>
                         </Link>
                     </div>
                 </div>
                 <div className="navbar-nav">
                     <div className="nav-item">
                         <Link to="/register">
-                            <div className="icon fa fa-user-plus"></div>
+                            <div className="nav-icon fa fa-user-plus"></div>
                         </Link>
                     </div>
                 </div>
