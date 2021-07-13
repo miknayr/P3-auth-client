@@ -1,17 +1,12 @@
 // import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
+import axios from 'axios'
 import Login from'./Login'
-
+import { useState } from 'react'
 export default function Events(props) {
-    if (!props.currentUser) return (
-        <Redirect 
-            to='/' 
-            component={ Login } 
-            currentUser={ props.currentUser } 
-        />
-    )
 
     return (
+
         <main>
             <div className="log-box">
                 <div className="event-box">
@@ -28,5 +23,6 @@ export default function Events(props) {
                 </div>
             </div>
         </main>
+
     )
 }
