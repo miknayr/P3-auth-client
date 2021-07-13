@@ -41,10 +41,9 @@ export default function Navbar(props) {
                 </div> */}
                 <div className="navbar-nav">
                     <Link to="/profile" className="nav-item">
-                        <div className="nav-icon fas fa-user"></div>
+                        <div className="nav-icon fas fa-user"/>
                         <p>Home</p>
                     </Link>
-
                 </div>
 
                 {/* <div className="navbar-nav">
@@ -56,20 +55,20 @@ export default function Navbar(props) {
 
                 <div className="navbar-nav">
                     <Link to="/friends" className="nav-item">
-                        <div className="nav-icon fas fa-user-friends"></div>
+                        <div className="nav-icon fas fa-user-friends"/>
                         <p>Friends</p>
                     </Link>
                 </div>
 
                 <div className="navbar-nav">
                     <Link to="/events" className="nav-item">
-                        <div className="nav-icon fas fa-clock"></div>
+                        <div className="nav-icon fas fa-clock"/>
                         <p>Events</p>
                     </Link>
                 </div>
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
-                        <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}></div>
+                        <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}/>
                         <p>Logout</p>
                     </Link>
                 </div>
@@ -82,12 +81,12 @@ export default function Navbar(props) {
             <nav className="navbar" style={{visibility: "hidden"}}>
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
-                        <div className="nav-icon fa fa-sign-in"></div>
+                        <div className="nav-icon fa fa-sign-in"/>
                     </Link>
                 </div>
                 <div className="navbar-nav">
                     <Link to="/register" className="nav-item">
-                        <div className="nav-icon fa fa-user-plus"></div>
+                        <div className="nav-icon fa fa-user-plus"/>
                     </Link>
                 </div>
             </nav>

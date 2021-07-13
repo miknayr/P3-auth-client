@@ -26,7 +26,7 @@ const Register = (props) => {
             props.setCurrentUser(decoded)
 
         } catch (error) {
-            if(error.response.status === 400) {
+            if (error.response.status === 400) {
                 setMessage(error.response.data.msg)
             } else {
                 console.log(error)
@@ -53,23 +53,23 @@ const Register = (props) => {
                         placeholder='Enter your name'
                         onChange={(e) => setName(e.target.value)}
                         value={name}
-                        />
+                    />
                     <input
                         id='email-input'
                         type='email'
                         placeholder='Enter your email'
                         onChange={(e) => setEmail(e.target.value)}
                         value={email}
-                        />
+                    />
                     <input
                         id='password-input'
                         type='password'
                         placeholder='********'
                         onChange={(e) => setPassword(e.target.value)}
                         value={password}
-                        />
+                    />
                 </div>
-                <input type='submit' value='Register' />
+                <input type='submit' value='Register'/>
             </form>
         </div>
     )
