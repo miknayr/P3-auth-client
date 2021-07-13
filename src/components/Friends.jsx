@@ -44,7 +44,7 @@ export default function Friends(props) {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/friends`) // <--- change to what jackie makes for backend get-route
         .then((response) => {
             setFriends(response.data.results)
-            console.log(response.data.results)
+            console.log(response.data.results, "HELLO")
         })
         .catch((err) => console.log(err))
         }, [])
