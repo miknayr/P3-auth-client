@@ -16,7 +16,7 @@ export default function Events(props) {
             <ul>
                 <li>
                     <div>
-                      < input type="checkbox"/>
+                      <input type="checkbox"/>
                          Adriana is at 8
                      </div>
                 </li>

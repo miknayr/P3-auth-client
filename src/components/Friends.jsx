@@ -69,10 +69,8 @@ export default function Friends(props) {
     // )
     return (
         <main>
-            <div className="container">
-                <div className="map-box">
-                    <img src='/friendspin.png' alt="friend-map"/>
-                </div>
+            <div className="map-box">
+                <img src='/friendspin.png' alt="friend-map"/>
             </div>
         </main>
     )
