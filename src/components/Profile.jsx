@@ -36,7 +36,7 @@ export default function Profile(props) {
         <main>
             <div className="container">
                 <div className="map-box">
-                    <img src='/fakemap.png' alt="map"/>
+                    <img src='/blankcoachella.png' alt="map"/>
                 </div>
             </div>
         </main>

@@ -37,14 +37,14 @@ main {
     margin: 10px auto;
 }
 
-h6 {
+.h6-header {
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
     color: rgb(34,19,91);
 }
 
-input {
+.login-input {
     margin: 5px;
     border-radius: 5px;
     border: 2px solid rgb(195,195,195);
@@ -54,7 +54,7 @@ input {
 
 .btn {
     font-size: 20px;
-    width: 120px;
+    width: 125px;
     background-color: rgb(117,77,180);
     padding: 0 15px;
     color: white;
@@ -64,7 +64,7 @@ input {
     opacity: 70%;
 }
 
-.icon {
+.nav-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -136,4 +136,30 @@ p {
 
 .navbar {
     padding: 0.5rem;
+}
+
+.friend-header {
+    text-align: center;
+    margin: 50px -10px 30px -10px;
+    padding: 10px;
+    color: rgb(53,34,109);
+    background-color: rgb(182,156,206);
+}
+
+.friend-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin: 3px 10px auto 20px;
+    color: rgb(249,144,59);
+    background-color: rgb(35,18,95);
+}
+
+.friend-box {
+    display: grid;
+    grid-template-columns: 50px 250px 50px;
+    margin-top: 20px;
 }
