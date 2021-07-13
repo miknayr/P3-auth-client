@@ -33,16 +33,12 @@ export default function Profile(props) {
     ) 
     
     return (
-        <div className="container">
-          <div>
-          <img src='/fakemap.png' alt="image" width='80%'/>
-          </div>
-            {/* <h4>Greetings {props.currentUser.name} 👋</h4>
-            <h5>your email is {props.currentUser.email}</h5>
-            <div>
-                <p>you have a secret message from the authorized user area:</p>
-                <p>{message}</p>
-            </div> */}
-        </div>
+        <main>
+            <div className="container">
+                <div className="map-box">
+                    <img src='/fakemap.png' alt="map"/>
+                </div>
+            </div>
+        </main>
     )
 }

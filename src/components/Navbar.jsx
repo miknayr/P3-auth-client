@@ -3,61 +3,101 @@ import { Link } from 'react-router-dom'
 export default function Navbar(props) {
     const loggedIn = (
         <>
-            <div className="navbar-nav">
+            <nav className="navbar">
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <div className="icon fa fa-map-marker"></div>
+                        <p>Ping Me</p>
+                    </div>
+                </div>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/profile">
+                            <div className="icon fas fa-user"></div>
+                            <p>Profile</p>
+                        </Link>
+                    </div>
+                </div>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/friends">
+                            <div className="icon fas fa-user-friends"></div>
+                            <p>Friends</p>
+                        </Link>
+                    </div>
+                </div>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/events">
+                            <div className="icon fas fa-clock"></div>
+                            <p>Events</p>
+                        </Link>
+                    </div>
+                </div>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/">
+                            <div class="icon fa fa-sign-out" onClick={props.handleLogout}></div>
+                            <p>Logout</p>
+                        </Link>
+                    </div>
+                </div>
+            {/* <div className="navbar-nav">
                 <div className="nav-item">
                     <Link to="/profile">
-                        <div class="icon fas fa-user"></div>
+                    <div class="icon fas fa-user"></div>
                     </Link>
-                </div>
-            </div>
-            <div className="navbar-nav">
-                <div className="nav-item">
+                    </div>
+                    </div>
+                    <div className="navbar-nav">
+                    <div className="nav-item">
                     <Link to="/friends">
-                        <div class="icon fas fa-user-friends"></div>
+                    <div class="icon fas fa-user-friends"></div>
                     </Link>
-                </div>
-            </div>
-            <div className="navbar-nav">
-                <div className="nav-item">
+                    </div>
+                    </div>
+                    <div className="navbar-nav">
+                    <div className="nav-item">
                     <Link to="/events">
-                        <div class="icon fas fa-map"></div>
+                    <div class="icon fas fa-map"></div>
                     </Link>
-                </div>
-            </div>
-            <div className="navbar-nav">
-                <div className="nav-item">
+                    </div>
+                    </div>
+                    <div className="navbar-nav">
+                    <div className="nav-item">
                     <Link to="/">
-                        <div class="icon fa fa-sign-out" onClick={props.handleLogout}></div>
+                    <div class="icon fa fa-sign-out" onClick={props.handleLogout}></div>
                     </Link>
-                </div>
-            </div>
+                    </div>
+                </div> */}
+            </nav>
         </>
     )
 
     const loggedOut = (
         <>
-            <div className="navbar-nav">
-                <div className="nav-item">
-                    <Link to="/">
-                        <div className="icon fa fa-sign-in"></div>
-                    </Link>
+            <nav className="navbar" style={{visibility: "hidden"}}>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/">
+                            <div className="icon fa fa-sign-in"></div>
+                        </Link>
+                    </div>
                 </div>
-            </div>
-            <div className="navbar-nav">
-                <div className="nav-item">
-                    <Link to="/register">
-                        <div className="icon fa fa-user-plus"></div>
-                    </Link>
+                <div className="navbar-nav">
+                    <div className="nav-item">
+                        <Link to="/register">
+                            <div className="icon fa fa-user-plus"></div>
+                        </Link>
+                    </div>
                 </div>
-            </div>
+            </nav>
         </>
     )
 
     return (
         <div className="container">
-            <nav className="navbar navbar-expand bg-dark fixed-bottom navbar-dark">
-                {props.currentUser ? loggedIn : loggedOut}
-            </nav>
+            {props.currentUser ? loggedIn : loggedOut}
         </div>
     )
 }

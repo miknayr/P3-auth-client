@@ -1,25 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+main {
+    position: relative;
+    margin: 0 auto;
+    border: 5px solid black;
+    width: 365px;
+    height: 667px;
+    border-radius: 25px;
+    padding: 10px;
+    overflow: scroll;
+}
+
 .log-box {
     text-align: center;
 }
 
+.header-box {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+}
+
 .log-header {
-    text-align: center;
-    margin-top: 200px;
+    text-transform: uppercase;
+    font-size: 54px;
+    font-weight: bold;
+    margin-top: 100px;
+    color: rgb(34,19,91);
+}
+
+.h6-box {
+    margin: 10px auto;
+}
+
+h6 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0 auto;
+    color: rgb(34,19,91);
 }
 
 input {
     margin: 5px;
+    border-radius: 5px;
+    border: 2px solid rgb(195,195,195);
+    width: 260px;
+    font-size: 20px;
 }
 
-body {
-    margin-top: 100px;
+.btn {
+    font-size: 20px;
+    width: 120px;
+    background-color: rgb(117,77,180);
+    padding: 0 15px;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 70%;
 }
 
 .icon {
-    width: 50px;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height: 22px;
+    margin: auto 3px;
+    color: black;
+    border-radius: 50%;
+}
+
+.fa-map-marker {
+    background-color: rgb(253,146,140);
+}
+
+.fa-user {
+    background-color: rgb(217,68,34);
+}
+
+.fa-user-friends {
+    background-color: rgb(245,141,58);
+}
+
+.fa-clock {
+    background-color: rgb(219,203,71);
+}
+
+.fa-sign-out {
+    background-color: rgb(138,138,138);
 }
 
 .icon:hover {
     opacity: 70%;
+}
+
+.map-box {
+    text-align: center;
+}
+
+img {
+    border-radius: 15px;
+    width: 330px;
+    height: 650px;
+    border-radius: 5px solid grey;
+}
+
+nav {
+    z-index: 1;
+    position: fixed;
+    top: 650px;
+    left: 125px;
+    width: 260px;
+    height: 80px;
+    border-radius: 15px;
+    background-color: rgb(72,52,107);
+    opacity: 80%;
+}
+
+.nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+p {
+    color: white;
+    font-size: 10px;
+}
+
+.navbar {
+    padding: 0.5rem;
 }

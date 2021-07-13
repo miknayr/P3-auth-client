@@ -62,15 +62,15 @@ function App() {
                     />    
                     <Route 
                         path="/profile"
-                        render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+                        render={props => currentUser ? <Profile {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/'/>}
                     />    
                     <Route 
                         path="/friends"
-                        render={props => currentUser ? <Friends {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+                        render={props => currentUser ? <Friends {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/'/>}
                     />    
                     <Route 
                         path="/events"
-                        render={props => currentUser ? <Events {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/login'/>}
+                        render={props => currentUser ? <Events {...props}  currentUser={ currentUser } handleLogout={handleLogout} /> : <Redirect to='/'/>}
                     />    
                 </Switch>     
             </div>

@@ -42,12 +42,17 @@ export default function Login(props) {
     ) 
 
   return (
+        <main>
         <div className="log-box">
-            <h2 className="log-header">Totemize</h2>
-            <p>{message}</p>
-            <h6>GET LOST</h6>
-            <h6>MEET AGAIN</h6>
-            
+            <div className="header-box">
+                <div className="text-box">
+                    <h2 className="log-header">Totemize</h2>
+                    <div className="h6-box">
+                        <h6>GET LOST</h6>
+                        <h6>MEET AGAIN</h6>
+                    </div>
+                </div>
+            </div>
             <form onSubmit={handleSubmit}>
                 <div>
                     <input 
@@ -56,6 +61,7 @@ export default function Login(props) {
                         placeholder='Email'
                         onChange ={e => setEmail(e.target.value)}
                         value={email}
+                        required
                         />
                         <br/>
                     <input
@@ -64,18 +70,22 @@ export default function Login(props) {
                         placeholder='Password'
                         onChange = {e => setPassword(e.target.value)}
                         value={password}
+                        required
                     />
                 </div>
                 <input
                     type='submit'
                     value='Login'
+                    className="btn"
                 />
                 
                 <input
                     type='submit'
                     value='Register'
+                    className="btn"
                 />
             </form>
         </div>
+        </main>
     )
 }
