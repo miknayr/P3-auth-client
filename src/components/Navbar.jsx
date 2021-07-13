@@ -39,12 +39,12 @@ export default function Navbar(props) {
                         <p>Events</p>
                     </Link>
                 </div>
-                {/* <div className="navbar-nav">
+                <div className="navbar-nav">
                     <Link to="/" className="nav-item">
                         <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}></div>
                         <p>Logout</p>
                     </Link>
-                </div> */}
+                </div>
             </nav>
         </>
     )
