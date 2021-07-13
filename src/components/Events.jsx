@@ -2,7 +2,7 @@
 import { Redirect } from 'react-router-dom'
 import Login from'./Login'
 
-export const Events = (props) => {
+export default function Events(props) {
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
