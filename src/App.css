@@ -8,8 +8,8 @@ main {
     position: relative;
     margin: 0 auto;
     border: 5px solid black;
-    width: 365px;
-    height: 667px;
+    width: 380px;
+    height: 700px;
     border-radius: 25px;
     padding: 10px;
     overflow: scroll;

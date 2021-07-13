@@ -14,8 +14,13 @@ export default function Events(props) {
     return (
         <main>
             <ul>
-                <li>Code-Chella</li>
-                <li>EDC</li>
+                <li>
+                    <div>
+                      < input type="checkbox"/>
+                         Adriana is at 8
+                     </div>
+                </li>
+                <li>Terry is at 8</li>
                 <li>Life is Beautiful</li>
                 <li>Day N Vegas</li>
                 <li>iHeartRadio Music Festival</li>

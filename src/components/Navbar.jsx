@@ -6,6 +6,7 @@ export default function Navbar(props) {
             <nav className="navbar">
                 <div className="navbar-nav">
                     <div className="nav-item">
+
                         <div className="nav-icon fa fa-map-marker"></div>
                         <p>Ping Me</p>
                     </div>
@@ -15,13 +16,23 @@ export default function Navbar(props) {
                         <div className="nav-icon fas fa-user"></div>
                         <p>Profile</p>
                     </Link>
+
                 </div>
+
+                {/* <div className="navbar-nav">
+                    <div className="nav-item">
+                        <div className="nav-icon fa fa-map-marker"></div>
+                        <p>friends </p>
+                    </div>
+                </div> */}
+
                 <div className="navbar-nav">
                     <Link to="/friends" className="nav-item">
                         <div className="nav-icon fas fa-user-friends"></div>
                         <p>Friends</p>
                     </Link>
                 </div>
+
                 <div className="navbar-nav">
                     <Link to="/events" className="nav-item">
                         <div className="nav-icon fas fa-clock"></div>
