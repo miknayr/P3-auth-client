@@ -53,16 +53,12 @@ export default function Friends(props) {
         />
     )
     // return (
-    //     <main>
     //     <h4 className="friend-header">Invite Friends...</h4>
     //         {friendListMap}
-    //     </main>
     // )
     return (
-        <main>
-            <div className="map-box">
-                <img src='/friendspin.png' alt="friend-map"/>
-            </div>
-        </main>
+        <div className="map-box">
+            <img src='/friendspin.png' alt="friend-map"/>
+        </div>
     )
 }
