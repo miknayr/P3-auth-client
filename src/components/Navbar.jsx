@@ -65,6 +65,7 @@ export default function Navbar(props) {
         </>
     )
 
+    
     return (
         <div className="container">
             {props.currentUser ? loggedIn : loggedOut}

@@ -6,8 +6,7 @@ import { useState } from 'react'
 export default function Events(props) {
 
     return (
-
-        <main>
+       
             <div className="log-box">
                 <div className="event-box">
                     <div>2:30pm</div>
@@ -22,7 +21,6 @@ export default function Events(props) {
                     <p>Rufus Du Sol @Stage 7!!</p>
                 </div>
             </div>
-        </main>
-
+       
     )
 }
