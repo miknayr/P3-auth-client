@@ -46,8 +46,8 @@ function App() {
 
     return (
         <Router>
-            <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
-            <div className="App">
+            <main>
+                <Navbar  currentUser={ currentUser } handleLogout={ handleLogout } />
                 <Switch>
                     <Route 
                         exact path="/"
@@ -55,7 +55,8 @@ function App() {
                             <Login {...props}  
                                 currentUser={ currentUser } 
                                 setCurrentUser={setCurrentUser} 
-                            /> }
+                            />
+                        }
                     />    
                     <Route 
                         path="/register"
@@ -63,15 +64,17 @@ function App() {
                             <Register {...props} 
                                 currentUser={ currentUser } 
                                 setCurrentUser={setCurrentUser} 
-                            /> }
+                            />
+                        }
                     />    
                     <Route 
                         path="/profile"
                         render={props => 
-                                currentUser ? <Profile {...props}  
-                                    currentUser={ currentUser } 
-                                    handleLogout={handleLogout} 
-                                /> : <Redirect to='/'/>}
+                            currentUser ? <Profile {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
                     />    
                     <Route 
                         path="/friends"
@@ -79,7 +82,8 @@ function App() {
                             currentUser ? <Friends {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
-                            /> : <Redirect to='/'/>}
+                            /> : <Redirect to='/'/>
+                        }
                     />    
                     <Route 
                         path="/events"
@@ -87,10 +91,11 @@ function App() {
                             currentUser ? <Events {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
-                            /> : <Redirect to='/'/>}
+                            /> : <Redirect to='/'/>
+                        }
                     />    
-                </Switch>     
-            </div>
+                </Switch> 
+            </main>
         </Router>
     );
 }

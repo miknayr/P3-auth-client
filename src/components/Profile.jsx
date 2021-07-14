@@ -33,10 +33,8 @@ export default function Profile(props) {
     ) 
     
     return (
-        <main>
-            <div className="map-box">
-                <img src='/code-chella-map.png' alt="map"/>
-            </div>
-        </main>
+        <div className="map-box">
+            <img src='/code-chella-map.png' alt="map"/>
+        </div>
     )
 }

@@ -4,6 +4,10 @@
     font-family: "Roboto", sans-serif;
 }
 
+body {
+    background-image: linear-gradient(rgb(91, 83, 130), rgb(171,163,210));
+}
+
 main {
     position: relative;
     margin: 0 auto;
@@ -20,7 +24,8 @@ main {
 .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
-    margin: 120px 10px auto 10px;
+    margin: 70px 10px auto 10px;
+    max-height: 500px;
     padding-bottom: 10px;
     opacity: 80%;
     border-radius: 15px;
@@ -58,6 +63,7 @@ main {
     border: 1px solid rgb(249,144,59);
     width: 260px;
     font-size: 15px;
+    color: rgb(249,144,59);
 }
 
 .login-input:-webkit-autofill,
@@ -66,7 +72,7 @@ main {
     -webkit-text-fill-color: rgb(249,144,59);
 }
 
-.login-input:focus {
+.login-input:focus, ::placeholder {
     color: rgb(249,144,59);
 }
 
@@ -76,8 +82,8 @@ main {
     margin-left: 35px;
 }
 
-::placeholder {
-    color: rgb(249,144,59);
+#forgot:hover {
+    text-decoration: underline;
 }
 
 .btn {
@@ -98,14 +104,15 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 22px;
-    height: 22px;
+    width: 30px;
+    height: 30px;
     margin: auto 3px;
-    color: black;
     border-radius: 50%;
+    background-color: rgb(79,34,141);
+    color: rgb(229,124,39);
 }
 
-.fa-map-marker {
+/* .fa-map-marker {
     background-color: rgb(253,146,140);
 }
 
@@ -123,7 +130,7 @@ main {
 
 .fa-sign-out {
     background-color: rgb(138,138,138);
-}
+} */
 
 .icon:hover {
     opacity: 70%;
@@ -141,9 +148,9 @@ img {
 
 nav {
     z-index: 1;
-    position: fixed;
-    top: 650px;
-    left: 125px;
+    position: absolute;
+    top: 580px;
+    left: 30px;
     width: 260px;
     height: 80px;
     border-radius: 15px;
