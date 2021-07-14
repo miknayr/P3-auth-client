@@ -6,18 +6,21 @@ import { useState } from 'react'
 export default function Events(props) {
 
     return (
-    
-    <main>    
-      <h1>Upcoming Events</h1>
-          <form action="/">
-              <input type="checkbox"/>
-              <label> Jackie at 8PM at Food Trucks B</label><br />
-              <input type="checkbox"/>
-              <label> Terry at 6PM at Stage 1</label><br />
-              <input type="checkbox"/>
-              <label> Ryan at 11PM at Beers</label><br />
-              <input type="submit" value="Submit"/>
-          </form>
-    </main>
+       
+            <div className="log-box">
+                <div className="event-box">
+                    <div>2:30pm</div>
+                    <p>Post-Lunch Check-In</p>
+                </div>
+                <div className="event-box">
+                    <div>5:00pm</div>
+                    <p>VIP Dinner Check-In</p>
+                </div>
+                <div className="event-box">
+                    <div>7:30pm</div>
+                    <p>Rufus Du Sol @Stage 7!!</p>
+                </div>
+            </div>
+       
     )
 }
