@@ -20,8 +20,8 @@ main {
     background-image: url("./images/backsplash3.png");
     background-size: cover;
 }
-/* 
-.log-box {
+
+/* .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
     margin: 70px 10px auto 10px;
@@ -39,29 +39,28 @@ main {
     justify-content: center;
 }
 
-/* 
+
 .log-header {
     text-transform: uppercase;
     font-size: 54px;
     font-weight: bold;
     margin-top: 10px;
     color: rgb(10,0,61);
-} */
+}
 
-/* 
 .h6-box {
     margin: 10px auto;
-} */
+} 
 
-/* 
+
 .h6-header {
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
     color: rgb(249,144,59);
-} */
+}
 
-/* 
+
 .login-input {
     margin: 10px;
     border-radius: 5px;
@@ -69,33 +68,33 @@ main {
     width: 260px;
     font-size: 15px;
     color: rgb(249,144,59);
-} */
+}
 
-/* 
+
 .login-input:-webkit-autofill,
 .login-input:-webkit-autofill:hover,
 .login-input:-webkit-autofill:focus {
     -webkit-text-fill-color: rgb(249,144,59);
-} */
+}
 
-/* 
+
 .login-input:focus, ::placeholder {
     color: rgb(249,144,59);
-} */
+}
 
-/* 
+
 #forgot {
     color: rgb(249,144,59);
     text-align: left;
     margin-left: 35px;
-} */
+}
 
-/* 
+
 #forgot:hover {
     text-decoration: underline;
-} */
+}
 
-/* 
+
 .btn {
     font-size: 15px;
     text-transform: uppercase;
@@ -104,15 +103,15 @@ main {
     padding: 0 12px;
     color: white;
     border: none;
-} */
+}
 
 
-/* 
+
 .btn:hover {
     opacity: 70%;
-} */
+}
 
-/* .nav-icon {
+.nav-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +121,7 @@ main {
     border-radius: 50%;
     background-color: rgb(79,34,141);
     color: rgb(229,124,39);
-} */
+}
 /* ~~~~ this was already hidden~~~~~ */
 /* .fa-map-marker {
     background-color: rgb(253,146,140);
@@ -146,24 +145,24 @@ main {
 
 /* ~~~~~~~above was already hidden ~~~~*/
 
-/* 
+
 .icon:hover {
     opacity: 70%;
-} */
+}
 
 
-/* .map-box {
+.map-box {
     text-align: center;
-} */
+}
 
-/* 
+
 img {
     border-radius: 15px;
     width: 330px;
     border-radius: 5px solid grey;
-} */
+}
 
-/* 
+
 nav {
     z-index: 1;
     position: absolute;
@@ -174,42 +173,42 @@ nav {
     border-radius: 15px;
     background-color: rgb(119,74,181);
     opacity: 80%;
-} */
+}
 
-/* 
+
 .nav-item {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-} */
+}
 
-/* 
+
 .nav-item:hover {
     opacity: 80%;
     text-decoration: none;
-} */
+}
 
-/* 
+
 p {
     color: white;
     font-size: 10px;
-} */
+}
 
-/* 
+
 .navbar {
     padding: 0.5rem;
-} */
+}
 
-/* 
+
 .friend-header {
     text-align: center;
     margin: 50px -10px 30px -10px;
     padding: 10px;
     color: rgb(53,34,109);
     background-color: rgb(182,156,206);
-} */
-/* 
+}
+
 .friend-icon {
     display: flex;
     justify-content: center;
@@ -220,23 +219,23 @@ p {
     margin: 3px 10px auto 20px;
     color: rgb(249,144,59);
     background-color: rgb(35,18,95);
-} */
-/* 
+}
+
 .friend-box {
     display: grid;
     grid-template-columns: 50px 250px 50px;
     margin-top: 20px;
-} */
-/* 
+}
+
 .event-box {
     background-color: white;
     margin: 20px 10px;
     padding: 20px auto;
     border-radius: 15px;
-} */
-/* 
+}
+
 .event-box p {
     color: black;
     font-size: 20px;
 }
- */
+
