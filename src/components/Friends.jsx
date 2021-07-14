@@ -4,7 +4,7 @@ import axios from 'axios'
 import Login from'./Login'
 
 export default function Friends(props) {
-    const [friends, setFriends] = useState([])
+    // const [friends, setFriends] = useState([])
     const [message, setMessage] = useState('')
     // hit the auth locked route on the backend
     useEffect(() => {
@@ -36,14 +36,14 @@ export default function Friends(props) {
     //     )
     // })
     
-    useEffect(() => {
-        console.log(props.currentUser.id, "PROPS CURRENT")
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
-        .then((response) => {
-            setFriends(response.data.results)
-        })
-        .catch((err) => console.log(err))
-    }, [])
+    // useEffect(() => {
+    //     console.log(props.currentUser.id, "PROPS CURRENT")
+    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
+    //     .then((response) => {
+    //         setFriends(response.data.results)
+    //     })
+    //     .catch((err) => console.log(err))
+    // }, [])
 
     if (!props.currentUser) return(
         <Redirect 

@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
-import Profile from './Profile'
+import Home from './Home'
 
 export default function Login(props) {
     const [email, setEmail] = useState('')
@@ -36,8 +37,8 @@ export default function Login(props) {
 
     if (props.currentUser) return (
         <Redirect 
-            to='/profile' 
-            component={ Profile } 
+            to='/home' 
+            component={ Home } 
             currentUser={ props.currentUser } 
         />
     ) 
@@ -77,11 +78,15 @@ export default function Login(props) {
                     value='Login'
                     className="btn login-input"
                 />
-                <input
+                {/* <input
                     type='submit'
                     value='Register'
                     className="btn login-input"
-                />
+                /> */}
+                
+                <Link className="btn login-input register" to="/register">
+                    Register
+                </Link>
             </form>
             <p id="forgot">Forgot Your Password?</p>
         </div>
