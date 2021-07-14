@@ -108,7 +108,7 @@ main {
 
 
 .btn:hover {
-    opacity: 70%;
+    /* opacity: 70%; */
 }
 
 .nav-icon {
@@ -147,7 +147,7 @@ main {
 
 
 .icon:hover {
-    opacity: 70%;
+    /* opacity: 70%; */
 }
 
 
@@ -185,7 +185,7 @@ nav {
 
 
 .nav-item:hover {
-    opacity: 80%;
+    /* opacity: 80%; */
     text-decoration: none;
 }
 
