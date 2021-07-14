@@ -20,22 +20,15 @@ main {
     background-size: cover;
 }
 
+
 .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
     margin: 70px 10px auto 10px;
     max-height: 500px;
     padding-bottom: 10px;
-<<<<<<< HEAD
-    opacity: .80;
-    border-radius: 15px;
-    overflow: scroll; 
-=======
-
     opacity: .8;
-
     border-radius: 15px;
->>>>>>> main
 }
 
 
@@ -88,13 +81,10 @@ main {
     color: rgb(249,144,59);
 }
 
-<<<<<<< HEAD
-=======
 .register {
     text-decoration: none !important;
     cursor: default;
 }
->>>>>>> main
 
 #forgot {
     color: rgb(249,144,59);
@@ -121,11 +111,7 @@ main {
 
 
 .btn:hover {
-<<<<<<< HEAD
-    opacity: .7;
-=======
     opacity: .70;
->>>>>>> main
 }
 
 .nav-icon {
@@ -164,11 +150,7 @@ main {
 
 
 .icon:hover {
-<<<<<<< HEAD
-    opacity: .7;
-=======
     opacity: .70;
->>>>>>> main
 }
 
 
