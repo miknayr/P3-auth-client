@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import Profile from './Profile'
@@ -77,11 +78,15 @@ export default function Login(props) {
                     value='Login'
                     className="btn login-input"
                 />
-                <input
+                {/* <input
                     type='submit'
                     value='Register'
                     className="btn login-input"
-                />
+                /> */}
+                
+                <Link className="register" to="/register">
+                    <p>Register</p>
+                </Link>
             </form>
             <p id="forgot">Forgot Your Password?</p>
         </div>
