@@ -4,27 +4,18 @@ export default function Navbar(props) {
     const loggedIn = (
         <>
             <nav className="navbar">
-                {/* <div className="navbar-nav">
-                    <div className="nav-item">
-
-                        <div className="nav-icon fa fa-map-marker"></div>
-                        <p>Ping Me</p>
-                    </div>
-                </div> */}
                 <div className="navbar-nav">
-                    <Link to="/profile" className="nav-item">
-                        <div className="nav-icon fas fa-user"/>
+                    <Link to="/home" className="nav-item">
+                        <div className="nav-icon fas fa-map"/>
                         <p>Home</p>
                     </Link>
                 </div>
-
-                {/* <div className="navbar-nav">
-                    <div className="nav-item">
-                        <div className="nav-icon fa fa-map-marker"></div>
-                        <p>friends </p>
-                    </div>
-                </div> */}
-
+                <div className="navbar-nav">
+                    <Link to="/profile" className="nav-item">
+                        <div className="nav-icon fas fa-user"/>
+                        <p>Profile</p>
+                    </Link>
+                </div>
                 <div className="navbar-nav">
                     <Link to="/friends" className="nav-item">
                         <div className="nav-icon fas fa-user-friends"/>
