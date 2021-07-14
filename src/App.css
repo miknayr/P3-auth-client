@@ -11,7 +11,7 @@ body {
 main {
     position: relative;
     margin: 0 auto;
-    border: 4px solid black;
+    border: 5px solid black;
     width: 380px;
     height: 700px;
     border-radius: 25px;
@@ -76,7 +76,10 @@ main {
     color: rgb(249,144,59);
 }
 
-
+.register {
+    text-decoration: none !important;
+    cursor: default;
+}
 
 #forgot {
     color: rgb(249,144,59);
