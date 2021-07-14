@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 import Login from './components/Login.jsx'
 import Navbar from './components/Navbar.jsx'
 import Profile from './components/Profile.jsx'
