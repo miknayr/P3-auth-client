@@ -38,7 +38,7 @@ export default function Friends(props) {
     
     // useEffect(() => {
     //     console.log(props.currentUser.id, "PROPS CURRENT")
-    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
+    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
     //     .then((response) => {
     //         setFriends(response.data.results)
     //     })

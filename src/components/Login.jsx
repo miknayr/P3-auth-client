@@ -84,8 +84,8 @@ export default function Login(props) {
                     className="btn login-input"
                 /> */}
                 
-                <Link className="register" to="/register">
-                    <p>Register</p>
+                <Link className="btn login-input register" to="/register">
+                    Register
                 </Link>
             </form>
             <p id="forgot">Forgot Your Password?</p>
