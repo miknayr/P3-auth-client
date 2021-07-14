@@ -25,9 +25,9 @@ main {
     text-align: center;
     background-color: rgb(117,77,180);
     margin: 70px 10px auto 10px;
-    /* max-height: 500px;
+    max-height: 500px;
     padding-bottom: 10px;
-    opacity: 80%;
+    /* opacity: 80%;
     border-radius: 15px;
     overflow: scroll;  */
 }
