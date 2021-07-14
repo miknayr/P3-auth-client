@@ -27,7 +27,7 @@ main {
     margin: 70px 10px auto 10px;
     max-height: 500px;
     padding-bottom: 10px;
-    /* opacity: 80%; */
+    opacity: .80;
     border-radius: 15px;
     overflow: scroll; 
 }
@@ -108,7 +108,7 @@ main {
 
 
 .btn:hover {
-    /* opacity: 70%; */
+    opacity: .7;
 }
 
 .nav-icon {
@@ -147,7 +147,7 @@ main {
 
 
 .icon:hover {
-    /* opacity: 70%; */
+    opacity: .7;
 }
 
 
@@ -172,7 +172,7 @@ nav {
     height: 80px;
     border-radius: 15px;
     background-color: rgb(119,74,181);
-    /* opacity: 80%; */
+    opacity: .80;
 }
 
 
@@ -185,7 +185,7 @@ nav {
 
 
 .nav-item:hover {
-    /* opacity: 80%; */
+    opacity: .80;
     text-decoration: none;
 }
 
