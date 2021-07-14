@@ -6,6 +6,7 @@ import Login from'./Login'
 
 export default function Profile(props) {
     const [message, setMessage] = useState('')
+    const [friends, setFriends] = useState([])
 
     useEffect(() => {
         const getPrivateMessage = async () => {
@@ -24,6 +25,16 @@ export default function Profile(props) {
         getPrivateMessage()    
     },[props])
 
+    useEffect(() => {
+        console.log(props.currentUser.id, "PROPS CURRENT")
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
+        .then((response) => {
+            console.log("RESPONSE DATA",response.data.results)
+            setFriends(response.data.results)
+        })
+        .catch((err) => console.log(err))
+    }, [])
+
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -33,12 +44,8 @@ export default function Profile(props) {
     ) 
     
     return (
-        <main>
-            <div className="container">
-                <div className="map-box">
-                    <img src='/blankcoachella.png' alt="map"/>
-                </div>
-            </div>
-        </main>
+        <div className="map-box">
+            <img src='/code-chella-map.png' alt="map"/>
+        </div>
     )
 }

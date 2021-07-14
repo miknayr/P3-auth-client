@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import Profile from './Profile'
@@ -27,6 +28,7 @@ export default function Login(props) {
         } catch (err) {
             if (err.response.status === 400) {
                 setMessage(err.response.data.msg)
+                console.dir(message)
             } else {
                 console.dir(err)
             }
@@ -42,7 +44,6 @@ export default function Login(props) {
     ) 
 
   return (
-        <main>
         <div className="log-box">
             <div className="header-box">
                 <div className="text-box">
@@ -56,17 +57,14 @@ export default function Login(props) {
             <form onSubmit={handleSubmit}>
                 <div>
                     <input 
-                        id='email-input'
                         type='email'
                         placeholder='Email'
                         onChange ={e => setEmail(e.target.value)}
                         value={email}
                         className="login-input"
                         required
-                        />
-                        <br/>
+                    />
                     <input
-                        id='password-input'
                         type='password'
                         placeholder='Password'
                         onChange = {e => setPassword(e.target.value)}
@@ -80,14 +78,17 @@ export default function Login(props) {
                     value='Login'
                     className="btn login-input"
                 />
-                
-                <input
+                {/* <input
                     type='submit'
                     value='Register'
                     className="btn login-input"
-                />
+                /> */}
+                
+                <Link className="register" to="/register">
+                    <p>Register</p>
+                </Link>
             </form>
+            <p id="forgot">Forgot Your Password?</p>
         </div>
-        </main>
     )
 }
