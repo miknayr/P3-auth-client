@@ -16,7 +16,6 @@ main {
     height: 700px;
     border-radius: 25px;
     padding: 10px;
-    overflow: scroll;
     background-image: url("./images/backsplash3.png");
     background-size: cover;
 }
@@ -31,7 +30,6 @@ main {
     opacity: .8;
 
     border-radius: 15px;
-    overflow: scroll;
 }
 
 .header-box {
