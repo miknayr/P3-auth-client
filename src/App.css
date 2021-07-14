@@ -20,7 +20,7 @@ main {
     background-image: url("./images/backsplash3.png");
     background-size: cover;
 }
-/* 
+
 .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
@@ -30,14 +30,14 @@ main {
     opacity: 80%;
     border-radius: 15px;
     overflow: scroll;
-} */
+}
 
-/* 
+
 .header-box {
     text-align: left;
     display: flex;
     justify-content: center;
-} */
+}
 
 /* 
 .log-header {
