@@ -27,7 +27,9 @@ main {
     margin: 70px 10px auto 10px;
     max-height: 500px;
     padding-bottom: 10px;
-    opacity: .80;
+
+    opacity: .8;
+
     border-radius: 15px;
     overflow: scroll;
 }

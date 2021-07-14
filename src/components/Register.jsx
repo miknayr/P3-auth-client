@@ -2,7 +2,8 @@ import { useState } from "react"
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import { Redirect } from 'react-router-dom'
-import Profile from './Profile'
+import Home from './Home'
+
 const Register = (props) => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -36,8 +37,8 @@ const Register = (props) => {
 
     if (props.currentUser) return (
         <Redirect 
-            to='/profile' 
-            component={ Profile } 
+            to='/home' 
+            component={ Home } 
             currentUser = { props.currentUser } 
         />
     )

@@ -1,7 +1,8 @@
 import './App.css';
 import Login from './components/Login.jsx'
 import Navbar from './components/Navbar.jsx'
-import Profile from './components/Profile.jsx'
+import Home from './components/Home.jsx'
+import Profile from './components/Profile'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
 import Events from './components/Events'
@@ -68,14 +69,23 @@ function App() {
                         }
                     />    
                     <Route 
-                        path="/profile"
+                        path="/home"
                         render={props => 
+                            currentUser ? <Home {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
+                    />
+                    <Route 
+                        path="/profile"
+                        render={props =>
                             currentUser ? <Profile {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
                             /> : <Redirect to='/'/>
                         }
-                    />    
+                    />
                     <Route 
                         path="/friends"
                         render={props => 
