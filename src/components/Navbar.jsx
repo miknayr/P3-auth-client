@@ -50,7 +50,7 @@ export default function Navbar(props) {
 
     const loggedOut = (
         <>
-            <nav className="navbar" style={{visibility: "hidden"}}>
+            <nav className="navbar invisible">
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
                         <div className="nav-icon fa fa-sign-in"/>
