@@ -16,8 +16,9 @@ export default function Events  (props) {
         try {
             e.preventDefault()
             const requestBody = { eventName, location, friend }
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.name}`, requestBody)
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)
             console.log(response.data)
+            
             
         } catch (err){
             console.log(err)        
@@ -59,7 +60,6 @@ export default function Events  (props) {
                 </div>
                 <input type='submit' value='add event' />
             </form>
-
                 </div>
     )
 }
