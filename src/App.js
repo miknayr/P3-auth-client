@@ -5,8 +5,11 @@ import Home from './components/Home.jsx'
 import Profile from './components/Profile'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
+
 import Events from './components/Events'
 import { Location } from './components/Location'
+
+
 
 import {
     BrowserRouter as Router,
@@ -111,6 +114,7 @@ function App() {
                             currentUser ? <Events {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
+                                
                             /> : <Redirect to='/'/>
                         }
                     />    
