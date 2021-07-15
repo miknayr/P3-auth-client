@@ -46,33 +46,37 @@ const Register = (props) => {
     
     return (
         <div className="log-box">
-            <h3 className="log-header">Register for an Account</h3>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input
-                        id='name-input'
-                        type='text'
-                        placeholder='Enter your name'
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                    />
-                    <input
-                        id='email-input'
-                        type='email'
-                        placeholder='Enter your email'
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                    <input
-                        id='password-input'
-                        type='password'
-                        placeholder='********'
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                </div>
-                <input type='submit' value='Register'/>
-            </form>
+           
+
+              <h3 className="log-header">TOTEMIZE</h3>
+              <form onSubmit={handleSubmit}>
+                  <div>
+                      <input
+                          id='name-input'
+                          type='text'
+                          placeholder='Enter your name'
+                          onChange={(e) => setName(e.target.value)}
+                          value={name}
+                          />
+                      <input
+                          id='email-input'
+                          type='email'
+                          placeholder='Enter your email'
+                          onChange={(e) => setEmail(e.target.value)}
+                          value={email}
+                          />
+                      <input
+                          id='password-input'
+                          type='password'
+                          placeholder='********'
+                          onChange={(e) => setPassword(e.target.value)}
+                          value={password}
+                          />
+                  </div>
+                  <input type='submit' value='Register' className="btn login-input"/>
+              </form>
+                  <p> <a href="/" id="forgot"> go back </a></p>
+            
         </div>
     )
 }
