@@ -31,7 +31,7 @@ export default function Navbar(props) {
                 </div>
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
-                        <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}/>
+                        <div className="nav-icon fa fa-sign-out" onClick={props.handleLogout}/>
                         <p>Logout</p>
                     </Link>
                 </div>

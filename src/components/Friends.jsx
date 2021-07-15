@@ -5,6 +5,7 @@ import Login from'./Login'
 
 export default function Friends(props) {
     const [name, setName] = useState('')
+
     const [friends, setFriends] = useState([])
     // SET FRIENDS WITH BACKEND DATA
     useEffect(() => {
@@ -15,6 +16,7 @@ export default function Friends(props) {
         .catch(err => console.log(err))
     },[friends])
     // ADD NEW FRIEND
+
     const handleSubmit = async (e) => {
         try {
             e.preventDefault()
@@ -23,7 +25,12 @@ export default function Friends(props) {
             console.log(response.data)
             props.history.push('/friends', response.data.currentUser)
         } catch (error) {
-            console.log(error)
+            if(error.response.status === 400){
+                setMessage('Your friend is not registered')
+                console.dir(message)
+            } else {
+                console.dir(error)
+            }
         }
     }
     // GENERATE FRONTEND FRIENDS DISPLAY
@@ -47,6 +54,7 @@ export default function Friends(props) {
     return (
         <div>
             <h2 className="component-header">Friends</h2>
+      
             <form onSubmit={handleSubmit}>
                 <div className="text-center">
                     <input
@@ -67,6 +75,7 @@ export default function Friends(props) {
             </form>
             <div className="log-box">
                 {myFriends}
+
             </div>
         </div>
     )

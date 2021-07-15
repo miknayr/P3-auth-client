@@ -42,11 +42,14 @@ export default function Profile(props) {
 
     // RETURN
     return (
+
         <div>
             <h2 className="component-header">Profile</h2>
+
             <h4>Hello, {props.currentUser.name}!</h4>
             <p>{location.name}</p>
             <hr/>
+
             <form onSubmit={updateLocation}>
                 <input
                     type="text"
@@ -61,6 +64,7 @@ export default function Profile(props) {
                     className="btn login-input text-center"
                 />
             </form>
+
         </div>
     )
 }
