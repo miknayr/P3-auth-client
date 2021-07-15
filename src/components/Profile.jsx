@@ -11,6 +11,7 @@ export default function Profile(props) {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
         .then(response => {
             setLocation(response.data.location[0])
+            console.log(location)
         })
         .catch(err => console.log(err))
     },[location])
@@ -45,7 +46,6 @@ export default function Profile(props) {
 
         <div>
             <h2 className="component-header">Profile</h2>
-
             <h4>Hello, {props.currentUser.name}!</h4>
             <p>{location.name}</p>
             <hr/>
