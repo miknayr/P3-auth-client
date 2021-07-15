@@ -33,7 +33,7 @@ export default function Profile(props) {
     ) 
 
     return (
-        <div>
+        <div className="friend-list">
             <h4>Hello, {props.currentUser.name}!</h4>
             <hr/>
             <h4>Your Friends</h4>

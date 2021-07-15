@@ -5,6 +5,7 @@ import Login from'./Login'
 
 export default function Friends(props) {
     const [name, setName] = useState('')
+    const [message, setMessage] = useState('')
     // handleSubmit function
     const handleSubmit = async (e) => {
         try {
@@ -14,7 +15,12 @@ export default function Friends(props) {
             console.log(response.data)
             props.history.push('/profile', response.data.currentUser)
         } catch (error) {
-            console.log(error)
+            if(error.response.status === 400){
+                setMessage('Your friend is not registered')
+                console.dir(message)
+            } else {
+                console.dir(error)
+            }
         }
     }
     
@@ -46,6 +52,7 @@ export default function Friends(props) {
     return (
         <form onSubmit={handleSubmit}>
             <div>
+                <p>{message}</p>
                 <input
                     id='name-input'
                     type='text'
