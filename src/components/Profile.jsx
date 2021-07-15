@@ -37,12 +37,15 @@ export default function Profile(props) {
             <h4>Hello, {props.currentUser.name}!</h4>
             <hr/>
             <h4>Your Friends</h4>
-            <div className="log-box">
-                <div id='friendbox'>
+              <div>
 
-                  {myFriends}
+                <div className="log-box">
+                    <div id='friendbox'>
+
+                      {myFriends}
+                    </div>
                 </div>
-            </div>
+              </div>
         </div>
     )
 }
