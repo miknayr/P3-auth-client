@@ -37,6 +37,7 @@ export default function Events  (props) {
     )
     return (
         <div>
+
             <h3 className="new-event-head">Enter a new event</h3>
             <form onSubmit={handleSubmit}>
                 <div>

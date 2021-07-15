@@ -1,7 +1,7 @@
 import { useState } from "react"
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import Home from './Home'
 
 const Register = (props) => {
@@ -46,37 +46,48 @@ const Register = (props) => {
     
     return (
         <div className="log-box">
-           
-
-              <h3 className="log-header">TOTEMIZE</h3>
-              <form onSubmit={handleSubmit}>
-                  <div>
-                      <input
-                          id='name-input'
-                          type='text'
-                          placeholder='Enter your name'
-                          onChange={(e) => setName(e.target.value)}
-                          value={name}
-                          />
-                      <input
-                          id='email-input'
-                          type='email'
-                          placeholder='Enter your email'
-                          onChange={(e) => setEmail(e.target.value)}
-                          value={email}
-                          />
-                      <input
-                          id='password-input'
-                          type='password'
-                          placeholder='********'
-                          onChange={(e) => setPassword(e.target.value)}
-                          value={password}
-                          />
-                  </div>
-                  <input type='submit' value='Register' className="btn login-input"/>
-              </form>
-                  <p> <a href="/" id="forgot"> go back </a></p>
-            
+            <div className="header-box">
+                <div className="text-box">
+                    <h2 className="log-header">TOTEMIZE</h2>
+                    <div className="h6-box">
+                        <h6 className="h6-header">GET REGISTERED</h6>
+                    </div>
+                </div>
+            </div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <input
+                            type='text'
+                            placeholder='Name'
+                            onChange={(e) => setName(e.target.value)}
+                            value={name}
+                            className="login-input"
+                            required
+                        />
+                        <input
+                            type='email'
+                            placeholder='Email'
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            className="login-input"
+                            required
+                        />
+                        <input
+                            type='password'
+                            placeholder='Password'
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            className="login-input"
+                            required
+                        />
+                    </div>
+                    <input type='submit' value='Register' className="btn login-input"/>
+                </form>
+                <Link to="/">
+                    <p className="tiny-text">
+                        Go Back
+                    </p>
+                </Link>
         </div>
     )
 }

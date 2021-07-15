@@ -1,29 +1,37 @@
 import { useState, useEffect } from "react"
-import { Redirect } from 'react-router-dom'
+import { Redirect, useLocation } from 'react-router-dom'
 import axios from 'axios'
 import Login from'./Login'
 
 export default function Profile(props) {
-    const [friends, setFriends] = useState([])
+    const [placeName, setPlaceName] = useState([])
+    const [location, setLocation] = useState([])
 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
-        .then((response) => {
-            setFriends(response.data.friends)
-            console.log(friends)
+        .then(response => {
+            setLocation(response.data.location[0])
         })
-        .catch((err) => console.log(err))
-    },[])
+        .catch(err => console.log(err))
+    },[location])
 
-    let myFriends = friends.map(e => {
-        return (
-            <div className="friend-box">
-            <div className="friend-icon fas fa-user"/>
-            <h6>{e.name}</h6>
-            </div>
-        )
-    })
-
+    const updateLocation = async (e) => {
+        try {
+            e.preventDefault()
+            const requestBody = { placeName }
+            await axios.put(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`, requestBody)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    
+    // REDIRECT ON USER ERROR
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -32,20 +40,31 @@ export default function Profile(props) {
         />
     ) 
 
+    // RETURN
     return (
-        <div className="friend-list">
+
+        <div>
+            <h2 className="component-header">Profile</h2>
+
             <h4>Hello, {props.currentUser.name}!</h4>
+            <p>{location.name}</p>
             <hr/>
-            <h4>Your Friends</h4>
-              <div>
 
-                <div className="log-box">
-                    <div id='friendbox'>
+            <form onSubmit={updateLocation}>
+                <input
+                    type="text"
+                    placeholder="Where Are You?"
+                    onChange={e => setPlaceName(e.target.value)}
+                    value={placeName}
+                    className="login-input"
+                />
+                <input
+                    type='submit'
+                    value='Update'
+                    className="btn login-input text-center"
+                />
+            </form>
 
-                      {myFriends}
-                    </div>
-                </div>
-              </div>
         </div>
     )
 }
