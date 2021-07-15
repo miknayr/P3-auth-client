@@ -38,8 +38,10 @@ export default function Profile(props) {
             <hr/>
             <h4>Your Friends</h4>
             <div className="log-box">
-                <div></div>
-                {myFriends}
+                <div id='friendbox'>
+
+                  {myFriends}
+                </div>
             </div>
         </div>
     )
