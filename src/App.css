@@ -250,15 +250,8 @@ p {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin: 3px 10px auto 20px;
     color: rgb(249,144,59);
     background-color: rgb(35,18,95);
-}
-
-.friend-box {
-    display: grid;
-    grid-template-columns: 50px 250px 50px;
-    margin-top: 20px;
 }
 
 .event-box {
