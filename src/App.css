@@ -115,35 +115,10 @@ main {
     color: rgb(229,124,39);
 }
 
-/* .fa-map-marker {
-    background-color: rgb(253,146,140);
-}
-
-.fa-user {
-    background-color: rgb(217,68,34);
-}
-
-.fa-user-friends {
-    background-color: rgb(245,141,58);
-}
-
-.fa-clock {
-    background-color: rgb(219,203,71);
-}
-
-.fa-sign-out {
-    background-color: rgb(138,138,138);
-} */
-
 .fa-map-marker-alt {
     position: absolute;
     color: purple;
     font-size: 22px;
-    transition-duration: 0.2s;
-}
-
-.fa-map-marker-alt:hover {
-    transform: scale(1.4) translateY(-3.5px);
     transition-duration: 0.2s;
 }
 
@@ -153,20 +128,33 @@ main {
     width: 65px;
     border-radius: 25px;
     font-size: 15px;
+    transition-duration: 0.2s;
+    opacity: 0;
+}
+
+.marker-box:hover .fa-map-marker-alt {
+    transform: scale(1.4) translateY(-3.5px);
+    transition-duration: 0.2s;
+}
+
+.marker-box:hover .map-tag {
+    transform: scale(1.4) translateY(-10px);
+    transition-duration: 0.2s;
+    opacity: 1;
 }
 
 #sahara-tag {
-    top: 275px;
+    top: 285px;
     left: 30px;
 }
 
 #stage-tag {
-    top: -50px;
+    top: -40px;
     left: 103px;
 }
 
 #beer-barn-tag {
-    top: 245px;
+    top: 255px;
     left: 90px;
 }
 
