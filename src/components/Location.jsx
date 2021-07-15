@@ -26,7 +26,7 @@ export const Location = (props) => {
         <div>
             <h2 className="component-header">{localInfo.name}</h2>
             <div className="log-box">
-                {friendList}
+                
             </div>
         </div>
     )
