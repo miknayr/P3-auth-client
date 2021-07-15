@@ -29,8 +29,9 @@ const Register = (props) => {
         } catch (error) {
             if (error.response.status === 400) {
                 setMessage(error.response.data.msg)
+                console.dir(message)
             } else {
-                console.log(error)
+                console.dir(error)
             }
         }
     }

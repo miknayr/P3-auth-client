@@ -4,8 +4,26 @@ import axios from 'axios'
 import Login from'./Login'
 
 export default function Friends(props) {
-    // const [friends, setFriends] = useState([])
+    const [name, setName] = useState('')
     const [message, setMessage] = useState('')
+    // handleSubmit function
+    const handleSubmit = async (e) => {
+        try {
+            e.preventDefault()
+            const requestBody = { name }
+            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
+            console.log(response.data)
+            props.history.push('/profile', response.data.currentUser)
+        } catch (error) {
+            if(error.response.status === 400){
+                setMessage('Your friend is not registered')
+                console.dir(message)
+            } else {
+                console.dir(error)
+            }
+        }
+    }
+    
     // hit the auth locked route on the backend
     useEffect(() => {
         const getPrivateMessage = async () => {
@@ -22,28 +40,6 @@ export default function Friends(props) {
         // getPrivateMessage()    
     }, [props])
 
-    // let friendList = ["Ryan Kim", "Terry Zhou", "Jackie Dinh", "Matt Velasco", "June (So Yun) Jung", "Emmanuel Cruz"]
-    // const friendListMap = friendList.map(e => {
-    //     return (
-    //         <div className="friend-box">
-    //             <div className="friend-icon fas fa-user"></div>
-    //             <h4>{e}</h4>
-    //             <input 
-    //                 type='checkbox'
-    //                 className="friend-button"
-    //             />
-    //         </div>
-    //     )
-    // })
-    
-    // useEffect(() => {
-    //     console.log(props.currentUser.id, "PROPS CURRENT")
-    //     axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/${props.currentUser.id}`) // <--- change to what jackie makes for backend get-route
-    //     .then((response) => {
-    //         setFriends(response.data.results)
-    //     })
-    //     .catch((err) => console.log(err))
-    // }, [])
 
     if (!props.currentUser) return(
         <Redirect 
@@ -52,13 +48,24 @@ export default function Friends(props) {
             currentUser={ props.currentUser }
         />
     )
-    // return (
-    //     <h4 className="friend-header">Invite Friends...</h4>
-    //         {friendListMap}
-    // )
+  
     return (
-        <div className="map-box">
-            <img src='/friendspin.png' alt="friend-map"/>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <div>
+                <p>{message}</p>
+                <input
+                    id='name-input'
+                    type='text'
+                    placeholder='Enter your friends name'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                />
+            </div>
+            <input
+                type='submit'
+                value='Add'
+                className="btn login-input"
+            />
+        </form>
     )
 }

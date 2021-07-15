@@ -23,8 +23,8 @@ main {
 .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
-    margin: 70px 10px auto 10px;
-    max-height: 500px;
+    margin: 50px 10px auto 10px;
+    max-height: 300px;
     padding-bottom: 10px;
     opacity: .80;
     border-radius: 15px;
@@ -115,25 +115,63 @@ main {
     color: rgb(229,124,39);
 }
 
-/* .fa-map-marker {
-    background-color: rgb(253,146,140);
+.fa-map-marker-alt {
+    position: absolute;
+    color: purple;
+    font-size: 22px;
+    transition-duration: 0.2s;
 }
 
-.fa-user {
-    background-color: rgb(217,68,34);
+.map-tag {
+    position: absolute;
+    background-color: purple;
+    width: 65px;
+    border-radius: 25px;
+    font-size: 15px;
+    transition-duration: 0.2s;
+    opacity: 0;
 }
 
-.fa-user-friends {
-    background-color: rgb(245,141,58);
+.marker-box:hover .fa-map-marker-alt {
+    transform: scale(1.4) translateY(-3.5px);
+    transition-duration: 0.2s;
 }
 
-.fa-clock {
-    background-color: rgb(219,203,71);
+.marker-box:hover .map-tag {
+    transform: scale(1.4) translateY(-10px);
+    transition-duration: 0.2s;
+    opacity: 1;
 }
 
-.fa-sign-out {
-    background-color: rgb(138,138,138);
-} */
+#sahara-tag {
+    top: 285px;
+    left: 30px;
+}
+
+#stage-tag {
+    top: -40px;
+    left: 103px;
+}
+
+#beer-barn-tag {
+    top: 255px;
+    left: 90px;
+}
+
+#sahara {
+    top: 310px;
+    left: 55px;
+}
+
+#stage {
+    top: -15px;
+    left: 128px;
+}
+
+#beer-barn {
+    top: 280px;
+    left: 115px;
+}
 
 .icon:hover {
     opacity: .70;
@@ -141,6 +179,7 @@ main {
 
 .map-box {
     text-align: center;
+    position: relative
 }
 
 img {
@@ -207,6 +246,32 @@ p {
     grid-template-columns: 50px 250px 50px;
     margin-top: 20px;
 }
+
+
+.friend-list {
+    width: 100%;
+    height: 60%;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
 
 .event-box {
     background-color: white;

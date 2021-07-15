@@ -5,7 +5,11 @@ import Home from './components/Home.jsx'
 import Profile from './components/Profile'
 import Register from './components/Register.jsx'
 import Friends from './components/Friends.jsx'
-import Events from './components/Events.jsx'
+
+import Events from './components/Events'
+import { Location } from './components/Location'
+
+
 
 import {
     BrowserRouter as Router,
@@ -67,11 +71,20 @@ function App() {
                                 setCurrentUser={setCurrentUser} 
                             />
                         }
-                    />    
+                    />
                     <Route 
                         path="/home"
                         render={props => 
                             currentUser ? <Home {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
+                    />
+                    <Route
+                        path="/location"
+                        render={props => 
+                            currentUser ? <Location {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
                             /> : <Redirect to='/'/>

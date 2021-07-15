@@ -17,11 +17,10 @@ export default function Profile(props) {
 
     let myFriends = friends.map(e => {
         return (
-            <ul>
-                <li>
-                    {e.name}
-                </li>
-            </ul>
+            <div className="friend-box">
+            <div className="friend-icon fas fa-user"/>
+            <h6>{e.name}</h6>
+            </div>
         )
     })
 
@@ -34,11 +33,14 @@ export default function Profile(props) {
     ) 
 
     return (
-        <div>
-            <h1>Hello from Profile</h1>
-            <p>{props.currentUser.name}</p>
-            <p>{props.currentUser.email}</p>
-            {myFriends}
+        <div className="friend-list">
+            <h4>Hello, {props.currentUser.name}!</h4>
+            <hr/>
+            <h4>Your Friends</h4>
+            <div className="log-box">
+                <div></div>
+                {myFriends}
+            </div>
         </div>
     )
 }
