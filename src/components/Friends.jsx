@@ -4,7 +4,6 @@ import axios from 'axios'
 import Login from'./Login'
 
 export default function Friends(props) {
-    const [message, setMessage] = useState('')
     const [name, setName] = useState('')
     // handleSubmit function
     const handleSubmit = async (e) => {
@@ -12,7 +11,7 @@ export default function Friends(props) {
             e.preventDefault()
             const requestBody = { name }
             const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
-           console.log(response.data)
+            console.log(response.data)
             props.history.push('/profile', response.data.currentUser)
         } catch (error) {
             console.log(error)
@@ -46,20 +45,20 @@ export default function Friends(props) {
   
     return (
         <form onSubmit={handleSubmit}>
-                <div>
-                    <input
-                        id='name-input'
-                        type='text'
-                        placeholder='Enter your friends name'
-                        onChange={(e) => setName(e.target.value)}
-                        value={name}
-                    />
-                </div>
+            <div>
                 <input
-                    type='submit'
-                    value='Add'
-                    className="btn login-input"
+                    id='name-input'
+                    type='text'
+                    placeholder='Enter your friends name'
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
                 />
-            </form>
+            </div>
+            <input
+                type='submit'
+                value='Add'
+                className="btn login-input"
+            />
+        </form>
     )
 }
