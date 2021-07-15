@@ -32,6 +32,7 @@ export default function Login(props) {
             } else {
                 console.dir(err)
             }
+            setMessage(err)
         }
     }
 

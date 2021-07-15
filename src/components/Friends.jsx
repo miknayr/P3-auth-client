@@ -5,7 +5,7 @@ import Login from'./Login'
 
 export default function Friends(props) {
     const [name, setName] = useState('')
-
+    const [message, setMessage] = useState("")
     const [friends, setFriends] = useState([])
     // SET FRIENDS WITH BACKEND DATA
     useEffect(() => {
