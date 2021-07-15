@@ -16,7 +16,6 @@ main {
     height: 700px;
     border-radius: 25px;
     padding: 10px;
-    overflow: scroll;
     background-image: url("./images/backsplash3.png");
     background-size: cover;
 }
@@ -24,8 +23,8 @@ main {
 .log-box {
     text-align: center;
     background-color: rgb(117,77,180);
-    margin: 70px 10px auto 10px;
-    max-height: 500px;
+    margin: 50px 10px auto 10px;
+    max-height: 300px;
     padding-bottom: 10px;
     opacity: .8;
     border-radius: 15px;
@@ -134,12 +133,63 @@ main {
     background-color: rgb(138,138,138);
 } */
 
+.fa-map-marker-alt {
+    position: absolute;
+    color: purple;
+    font-size: 22px;
+    transition-duration: 0.2s;
+}
+
+.fa-map-marker-alt:hover {
+    transform: scale(1.4) translateY(-3.5px);
+    transition-duration: 0.2s;
+}
+
+.map-tag {
+    position: absolute;
+    background-color: purple;
+    width: 65px;
+    border-radius: 25px;
+    font-size: 15px;
+}
+
+#sahara-tag {
+    top: 275px;
+    left: 30px;
+}
+
+#stage-tag {
+    top: -50px;
+    left: 103px;
+}
+
+#beer-barn-tag {
+    top: 245px;
+    left: 90px;
+}
+
+#sahara {
+    top: 310px;
+    left: 55px;
+}
+
+#stage {
+    top: -15px;
+    left: 128px;
+}
+
+#beer-barn {
+    top: 280px;
+    left: 115px;
+}
+
 .icon:hover {
     opacity: .7;
 }
 
 .map-box {
     text-align: center;
+    position: relative
 }
 
 img {
