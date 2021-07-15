@@ -33,6 +33,7 @@ export default function Profile(props) {
     // RETURN
     return (
         <div>
+            <h2 className="component-header">Profile</h2>
             <h4>Hello, {props.currentUser.name}!</h4>
             <hr/>
             <h4>Your Friends</h4>

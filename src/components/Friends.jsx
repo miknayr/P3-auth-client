@@ -44,21 +44,24 @@ export default function Friends(props) {
     )
   
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <div>
+            <h2 className="component-header">Friends</h2>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <input
+                        id='name-input'
+                        type='text'
+                        placeholder='Enter your friends name'
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                    />
+                </div>
                 <input
-                    id='name-input'
-                    type='text'
-                    placeholder='Enter your friends name'
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
+                    type='submit'
+                    value='Add'
+                    className="btn login-input"
                 />
-            </div>
-            <input
-                type='submit'
-                value='Add'
-                className="btn login-input"
-            />
-        </form>
+            </form>
+        </div>
     )
 }
