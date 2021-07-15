@@ -78,17 +78,11 @@ export default function Login(props) {
                     value='Login'
                     className="btn login-input"
                 />
-                {/* <input
-                    type='submit'
-                    value='Register'
-                    className="btn login-input"
-                /> */}
-                
-                <Link className="btn login-input register" to="/register">
+                <Link className="btn login-input" to="/register">
                     Register
                 </Link>
             </form>
-            <p id="forgot">Forgot Your Password?</p>
+            <p className="tiny-text">Forgot Your Password?</p>
         </div>
     )
 }

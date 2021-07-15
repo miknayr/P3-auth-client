@@ -28,9 +28,7 @@ export default function Home(props) {
             <img src='/code-chella-map.png' alt="map"/>
             <Link to={{
                 pathname:'/location',
-                localInfo: {
-                    data: locations[0]
-                }
+                localInfo: { data: locations[0] }
             }}>
                 <div className="marker-box">
                     <p className="map-tag" id="sahara-tag">Sahara</p>
@@ -39,9 +37,7 @@ export default function Home(props) {
             </Link>
             <Link to={{
                 pathname:'/location',
-                localInfo: {
-                    data: locations[1]
-                }
+                localInfo: { data: locations[1] }
             }}>
                 <div className="marker-box">
                     <p className="map-tag" id="beer-barn-tag">Barn</p>
@@ -50,9 +46,7 @@ export default function Home(props) {
             </Link>
             <Link to={{
                 pathname:'/location',
-                localInfo: {
-                    data: locations[2]
-                }
+                localInfo: { data: locations[2] }
             }}>
                 <div className="marker-box">
                     <p className="map-tag" id="stage-tag">Stage</p>

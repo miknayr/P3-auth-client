@@ -21,13 +21,15 @@ main {
 }
 
 .log-box {
+    position: relative;
     text-align: center;
     background-color: rgb(117,77,180);
     margin: 50px 10px auto 10px;
-    max-height: 300px;
+    max-height: 350px;
     padding-bottom: 10px;
     opacity: .80;
     border-radius: 15px;
+    overflow: scroll;
 }
 
 .header-box {
@@ -79,13 +81,13 @@ main {
     cursor: default;
 }
 
-#forgot {
+.tiny-text {
     color: rgb(249,144,59);
     text-align: left;
     margin-left: 35px;
 }
 
-#forgot:hover {
+.tiny-text:hover {
     text-decoration: underline;
 }
 
