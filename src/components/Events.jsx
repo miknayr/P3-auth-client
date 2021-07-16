@@ -119,14 +119,15 @@ export default function Events(props) {
             <hr/>
             <h5>Upcoming Events</h5>
 
-            <div className="log-box">
+            <div className="log-box height-mod">
 
-              <div>{events.map((item) => {
+                
+                   {events.map((item) => {
                       return (
                           <p>{item.eventName}</p>
                       )
                   })} 
-                  </div>
+             
               </div>
 
                 {/* {events.length > 0 ? myEvents : noEvents} */}

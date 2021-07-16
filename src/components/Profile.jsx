@@ -66,20 +66,6 @@ export default function Profile(props) {
                     className="btn login-input text-center"
                 />
             </form>
-            {/* <form className="log-box" onSubmit={updateLocation}>
-                <input
-                    type="text"
-                    placeholder="Where Are You?"
-                    onChange={e => setPlaceName(e.target.value)}
-                    value={placeName}
-                    className="login-input"
-                />
-                <input
-                    type='submit'
-                    value='Update'
-                    className="btn login-input text-center"
-                />
-            </form> */}
             <hr/>
             <h5>Your Location</h5>
             <div className="log-box">
