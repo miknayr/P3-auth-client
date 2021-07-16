@@ -6,8 +6,7 @@ import Login from'./Login'
 export const Location = (props) => {
     const [localInfo, setLocalInfo] = useState(props.location.localInfo.data)
 
-    console.log(localInfo)
-
+    // REDIRECT ON USER ERROR  - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -15,10 +14,13 @@ export const Location = (props) => {
             currentUser={ props.currentUser }
         />
     ) 
-
+    
+    // RETURN  - - - - - - - - - - - - - - - -
     return (
         <div>
-            Hello from {localInfo.name}!
+            <h2 className="component-header">{localInfo.name}</h2>
+            <div className="log-box">
+            </div>
         </div>
     )
 }
