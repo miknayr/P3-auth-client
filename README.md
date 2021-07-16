@@ -19,7 +19,7 @@ Designers worked on the front end, giving us a general look and feel, branding a
 please use `npm i` to install axios, jsonwebtoken, react, react-dom, and react-router-dom.
 
 ## user story
-![userstory] (src/images/userstory.png),
+![userstory] (src/images/userstory.png)
 [Link to presentation](https://docs.google.com/presentation/d/1tE5ZKgdR9sb6IDTDAwWxN7lfKzvSmCqkLIFNkfZPnBg/edit#slide=id.ge4c5d93fc4_0_16)
 
 ## link to wireframes
