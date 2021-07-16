@@ -44,7 +44,11 @@ export default function Navbar(props) {
     // NAVBAR WHEN LOGGED OUT (INVISIBLE)  - - - - - - - - - - - - - - - -
     const loggedOut = (
         <>
+<<<<<<< HEAD
             <nav className="navbar">
+=======
+            <nav className="navbar invisible">
+>>>>>>> main
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
                         <div className="nav-icon fa fa-sign-in"/>
