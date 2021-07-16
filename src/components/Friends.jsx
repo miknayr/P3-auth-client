@@ -24,9 +24,11 @@ export default function Friends(props) {
         try {
             e.preventDefault()
             const requestBody = { name }
+
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
         } catch (err) {
             if (err.response.status === 400) {
+
                 setMessage('Your friend is not registered')
                 console.dir(message)
             } else {

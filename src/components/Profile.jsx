@@ -7,7 +7,9 @@ export default function Profile(props) {
     const [placeName, setPlaceName] = useState([])
     const [location, setLocation] = useState([])
 
+
     // SET CURRENT USER LOCATION  - - - - - - - - - - - - - - - - 
+
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
         .then(response => {
@@ -18,7 +20,9 @@ export default function Profile(props) {
             }
         })
         .catch(err => console.log(err))
+
     },[location, props.currentUser.id])
+
 
     // UPDATE CURRENT USER LOCATION  - - - - - - - - - - - - - - - - 
     const updateLocation = async (e) => {
@@ -32,13 +36,22 @@ export default function Profile(props) {
     }
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
+
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
             component={ Login } 
             currentUser={ props.currentUser }
         />
-    )
+
+    ) 
+    // if (refresh === true) return (
+    //   <Redirect
+    //     to='/profile'
+    //     component={ Profile }
+    //   />
+    // )
+
 
     // RETURN - - - - - - - - - - - - - - - - 
     return (
