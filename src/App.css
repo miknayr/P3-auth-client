@@ -18,17 +18,28 @@ main {
     padding: 10px;
     background-image: url("./images/backsplash3.png");
     background-size: cover;
+    box-shadow: 5px 5px 5px black;
 }
 
 
 .log-box {
+    position: relative;
     text-align: center;
     background-color: rgb(117,77,180);
-    margin: 70px 10px auto 10px;
-    max-height: 500px;
+    margin: 10px;
+    max-height: 350px;
     padding-bottom: 10px;
+<<<<<<< HEAD
     opacity: .8;
+=======
+    opacity: .80;
+>>>>>>> main
     border-radius: 15px;
+    overflow: scroll;
+}
+
+.height-mod {
+    max-height: 250px;
 }
 
 
@@ -53,6 +64,7 @@ main {
 
 
 .h6-header {
+    text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
@@ -81,19 +93,22 @@ main {
     color: rgb(249,144,59);
 }
 
-.register {
-    text-decoration: none !important;
-    cursor: default;
+.register:hover{
+    color: white;
 }
 
-#forgot {
+.tiny-text {
     color: rgb(249,144,59);
     text-align: left;
     margin-left: 35px;
 }
 
+<<<<<<< HEAD
 
 #forgot:hover {
+=======
+.tiny-text:hover {
+>>>>>>> main
     text-decoration: underline;
 }
 
@@ -114,6 +129,21 @@ main {
     opacity: .70;
 }
 
+
+.component-header {
+    font-size: 24px;
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 40px;
+    padding: 5px;
+    opacity: 0.8;
+    border-radius: 15px;
+    background-color: rgb(79,34,141);
+    color: rgb(229,124,39);
+    text-transform: uppercase;
+}
+
 .nav-icon {
     display: flex;
     justify-content: center;
@@ -125,26 +155,70 @@ main {
     background-color: rgb(79,34,141);
     color: rgb(229,124,39);
 }
+<<<<<<< HEAD
 /* ~~~~ this was already hidden~~~~~ */
 /* .fa-map-marker {
     background-color: rgb(253,146,140);
+=======
+
+.fa-map-marker-alt {
+    position: absolute;
+    color: purple;
+    font-size: 22px;
+    transition-duration: 0.2s;
+>>>>>>> main
 }
 
-.fa-user {
-    background-color: rgb(217,68,34);
+.map-tag {
+    position: absolute;
+    background-color: purple;
+    width: 65px;
+    border-radius: 25px;
+    font-size: 15px;
+    transition-duration: 0.2s;
+    opacity: 0;
 }
 
-.fa-user-friends {
-    background-color: rgb(245,141,58);
+.marker-box:hover .fa-map-marker-alt {
+    transform: scale(1.4) translateY(-3.5px);
+    transition-duration: 0.2s;
 }
 
-.fa-clock {
-    background-color: rgb(219,203,71);
+.marker-box:hover .map-tag {
+    transform: scale(1.4) translateY(-10px);
+    transition-duration: 0.2s;
+    opacity: 1;
 }
 
-.fa-sign-out {
-    background-color: rgb(138,138,138);
-} */
+#sahara-tag {
+    top: 285px;
+    left: 30px;
+}
+
+#stage-tag {
+    top: -40px;
+    left: 103px;
+}
+
+#beer-barn-tag {
+    top: 255px;
+    left: 90px;
+}
+
+#sahara {
+    top: 310px;
+    left: 55px;
+}
+
+#stage {
+    top: -15px;
+    left: 128px;
+}
+
+#beer-barn {
+    top: 280px;
+    left: 115px;
+}
 
 /* ~~~~~~~above was already hidden ~~~~*/
 
@@ -156,6 +230,7 @@ main {
 
 .map-box {
     text-align: center;
+    position: relative
 }
 
 
@@ -213,16 +288,19 @@ p {
 }
 
 .friend-icon {
+    position: absolute;
+    top: 8px;
+    left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
-    margin: 3px 10px auto 20px;
     color: rgb(249,144,59);
     background-color: rgb(35,18,95);
 }
+
 
 .friend-box {
     display: grid;
@@ -230,8 +308,31 @@ p {
     margin-top: 20px;
 }
 
+
+.friend-list {
+    width: 100%;
+    height: 60%;
+}
+  
+Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+/* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+
 .event-box {
+    position: relative;
     background-color: white;
+    height: 55px;
     margin: 20px 10px;
     padding: 20px auto;
     border-radius: 15px;
@@ -242,3 +343,49 @@ p {
     font-size: 20px;
 }
 
+<<<<<<< HEAD
+=======
+.location-text {
+    font-size: 24px;
+    position: absolute;
+    top: 0.5em;
+    left: 5em;
+}
+
+.no-friend-text {
+    font-size: 24px;
+    position: absolute;
+    top: 0.5em;
+    left: 3em;
+}
+
+.no-user-text {
+    position: absolute;
+    top: 1em;
+    left: 4em;
+}
+
+#friendbox {
+    overflow:auto;
+}
+
+.delete-text {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    opacity: .50;
+    border-radius: 15px;
+    transition-duration: 0.2s;
+    text-transform: uppercase;
+}
+
+.delete-text:hover {
+    opacity: 1;
+    transition-duration: 0.2s;
+}
+>>>>>>> main

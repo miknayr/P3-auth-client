@@ -1,9 +1,11 @@
 import './App.css';
 import Login from './components/Login.jsx'
+import Register from './components/Register.jsx'
 import Navbar from './components/Navbar.jsx'
 import Home from './components/Home.jsx'
+import { Location } from './components/Location'
 import Profile from './components/Profile'
-import Register from './components/Register.jsx'
+import { DeleteProfile } from './components/DeleteProfile'
 import Friends from './components/Friends.jsx'
 import Events from './components/Events'
 
@@ -67,7 +69,7 @@ function App() {
                                 setCurrentUser={setCurrentUser} 
                             />
                         }
-                    />    
+                    />
                     <Route 
                         path="/home"
                         render={props => 
@@ -77,10 +79,28 @@ function App() {
                             /> : <Redirect to='/'/>
                         }
                     />
+                    <Route
+                        path="/location"
+                        render={props => 
+                            currentUser ? <Location {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
+                    />
                     <Route 
                         path="/profile"
                         render={props =>
                             currentUser ? <Profile {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
+                    />
+                    <Route 
+                        path="/deleteprofile"
+                        render={props =>
+                            currentUser ? <DeleteProfile {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
                             /> : <Redirect to='/'/>
@@ -101,6 +121,7 @@ function App() {
                             currentUser ? <Events {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
+                                
                             /> : <Redirect to='/'/>
                         }
                     />    

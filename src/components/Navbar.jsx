@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
+
+    // NAVBAR WHEN LOGGED IN - - - - - - - - - - - - - - - -
     const loggedIn = (
         <>
             <nav className="navbar">
@@ -31,7 +33,7 @@ export default function Navbar(props) {
                 </div>
                 <div className="navbar-nav">
                     <Link to="/" className="nav-item">
-                        <div class="nav-icon fa fa-sign-out" onClick={props.handleLogout}/>
+                        <div className="nav-icon fa fa-sign-out" onClick={props.handleLogout}/>
                         <p>Logout</p>
                     </Link>
                 </div>
@@ -39,6 +41,7 @@ export default function Navbar(props) {
         </>
     )
 
+    // NAVBAR WHEN LOGGED OUT (INVISIBLE)  - - - - - - - - - - - - - - - -
     const loggedOut = (
         <>
             <nav className="navbar">
@@ -56,7 +59,7 @@ export default function Navbar(props) {
         </>
     )
 
-    
+    // RETURN  - - - - - - - - - - - - - - - -
     return (
         <div className="container">
             {props.currentUser ? loggedIn : loggedOut}

@@ -1,32 +1,99 @@
-// import { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
 import Login from'./Login'
-import { useState } from 'react'
-export default function Events(props) {
 
-    if (!props.currentUser) return (
-        <Redirect 
-            to='/' 
-            component={ Login } 
-            currentUser={ props.currentUser }
-        />
-    ) 
+export default function Events  (props) {
+    const [events, setEvents] = useState([])
+    // set to app level pass down to events?
+    const [eventName, setEventName] = useState('')
+    const [location, setLocation] = useState('')
+    const [friend, setFriend] = useState('')
+    // useEffect, maybe higher app level
+    // seems to be submitting without useEffect?
+    // trying to get db to create
+    async function handleSubmit(e) {
+        try {
+            e.preventDefault()
+            const requestBody = { eventName, location, friend }
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)   
 
-    return (
-        <div className="log-box">
+        } catch (err){
+            console.log(err)        
+        }}
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`)
+        .then((response) => {
+            setEvents(response.data.events)
+            console.log(events)
+        })
+    })
+
+    // GENERATE FRONTEND EVENTS DISPLAY - - - - - - - - - - - - - - - -
+    let myEvents = events.map(e => {
+        return (
             <div className="event-box">
-                <div>2:30pm</div>
-                <p>Post-Lunch Check-In</p>
+                <div className="friend-icon fas fa-exclamation"/>
+                <h6>{e.name}</h6>
             </div>
-            <div className="event-box">
-                <div>5:00pm</div>
-                <p>VIP Dinner Check-In</p>
-            </div>
-            <div className="event-box">
-                <div>7:30pm</div>
-                <p>Rufus Du Sol @Stage 7!!</p>
-            </div>
+        )
+    })
+
+    // GENERATE NO EVENTS DISPLAY
+    let noEvents = (
+        <div className="event-box">
+            <div className="friend-icon fas fa-sad-tear"/>
+            <h6 className="no-friend-text">Get a Life!</h6>
         </div>
     )
-}
+
+    // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - -
+    if (!props.currentUser) return (
+        <Redirect 
+            to="/"
+            component={ Login }
+            currentUser={ props.currentUser }
+        />
+    )
+    return (
+        <div>
+            <h2 className="component-header">Events</h2>
+            <h3 className="new-event-head">Enter a New Event</h3>
+            <hr/>
+            <form className="log-box" onSubmit={handleSubmit}>
+                <div>
+                    <input
+                        className="login-input"
+                        type='text'
+                        placeholder='What?'
+                        onChange={(e) => setEventName(e.target.value)}
+                        value={eventName}
+                    />
+                    <input
+                        className="login-input"
+                        type='text'
+                        placeholder='Where?'
+                        onChange={(e) => setLocation(e.target.value)}
+                        value={location}
+                    />
+                    <input
+                        className="login-input"
+                        type='text'
+                        placeholder='Who?'
+                        onChange={(e) => setFriend(e.target.value)}
+                        value={friend}
+                    />
+                </div>
+                <input 
+                    className="btn login-input"
+                    type='submit' 
+                    value='add event'
+                />
+            </form>
+            <hr/>
+            <h5>Upcoming Events</h5>
+            <div className="log-box">
+                {events.length > 0 ? myEvents : noEvents}
+            </div>
+        </div>
+    )}
