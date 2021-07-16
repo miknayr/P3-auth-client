@@ -321,6 +321,12 @@ Track */
     left: 3em;
 }
 
+.no-user-text {
+    position: absolute;
+    top: 1em;
+    left: 4em;
+}
+
 #friendbox {
     overflow:auto;
 }
