@@ -26,6 +26,8 @@ export default function Friends(props) {
             const requestBody = { name }
 
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
         } catch (err) {
             if (err.response.status === 400) {
 
@@ -38,29 +40,40 @@ export default function Friends(props) {
     }
 
     // DELETE FRIEND - - - - - - - - - - - - - - - -
-    const deleteFriend = async (e) => {
+    const deleteFriend = async (e, name) => {
         try {
             e.preventDefault()
-            const requestBody = { deleteName }
-            await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
+            const requestBody = { name }
+            await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, { data: requestBody })
         } catch (err) {
             console.dir(err)
         }
     }
 
     // GENERATE FRONTEND FRIENDS DISPLAY - - - - - - - - - - - - - - - -
-    let myFriends = friends.map(e => {
+    let myFriends = friends.map(friend => {
         return (
             <div className="event-box">
                 <div className="friend-icon fas fa-user" />
-                <h6>{e.name}</h6>
-                <form onSubmit={deleteFriend}>
-                    <input type="text" name={e.name} hidden />
-                    <input onClick={(e) => setDeleteName(e.target.name)} name={e.name} class="btn" type="submit" value="Delete" />
+                <h6>{friend.name}</h6>
+                <form onSubmit={(e) => deleteFriend(e, friend.name)}>
+                    <input 
+                        className="btn" 
+                        type="submit" 
+                        value="Delete"
+                    />
                 </form>
             </div>
         )
     })
+
+    // GENERATE NO FRIENDS DISPLAY
+    let noFriends = (
+        <div className="event-box">
+            <div className="friend-icon fas fa-sad-tear"/>
+            <h6 className="no-friend-text">Get Some Friends!</h6>
+        </div>
+    )
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
@@ -75,7 +88,9 @@ export default function Friends(props) {
     return (
         <div>
             <h2 className="component-header">Friends</h2>
-            <form onSubmit={handleSubmit}>
+            <h3 className="new-event-head">Find a Friend</h3>
+            <hr/>
+            <form className="log-box" onSubmit={handleSubmit}>
                 <div className="text-center">
                     <input
                         type='text'
@@ -89,12 +104,14 @@ export default function Friends(props) {
                     <input
                         type='submit'
                         value='Add'
-                        className="btn login-input text-center"
+                        className="btn login-input"
                     />
                 </div>
             </form>
-            <div className="log-box">
-                {myFriends}
+            <hr/>
+            <h5>Your Friends</h5>
+            <div className="log-box height-mod">
+                {friends.length > 0 ? myFriends : noFriends}
             </div>
         </div>
     )

@@ -1,7 +1,7 @@
 import { useState } from "react"
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
-import { Redirect, Link } from 'react-router-dom'
 import Home from './Home'
 
 const Register = (props) => {

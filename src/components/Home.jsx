@@ -1,7 +1,7 @@
-import Login from'./Login'
-import { Redirect, Link } from 'react-router-dom'
 import { useState, useEffect } from "react"
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
+import Login from'./Login'
 
 
 export default function Home(props) {
@@ -12,9 +12,10 @@ export default function Home(props) {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/location`)
         .then(foundLocations => {
             setLocations(foundLocations.data)
+            console.log(locations)
         })
         .catch(err => console.log(err))
-    },[])
+    },[locations])
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
     if (!props.currentUser) return (

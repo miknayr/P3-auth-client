@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import Login from './Login'
 
@@ -7,9 +7,7 @@ export default function Profile(props) {
     const [placeName, setPlaceName] = useState([])
     const [location, setLocation] = useState([])
 
-
     // SET CURRENT USER LOCATION  - - - - - - - - - - - - - - - - 
-
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
         .then(response => {
@@ -36,31 +34,26 @@ export default function Profile(props) {
     }
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
-
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
             component={ Login } 
             currentUser={ props.currentUser }
         />
-
     ) 
-    // if (refresh === true) return (
-    //   <Redirect
-    //     to='/profile'
-    //     component={ Profile }
-    //   />
-    // )
-
 
     // RETURN - - - - - - - - - - - - - - - - 
     return (
         <div>
+            <Link to={{
+                    pathname:'/deleteprofile'
+                }}>
+                <h5 className="delete-text">Delete</h5>
+            </Link>
             <h2 className="component-header">Profile</h2>
-            <h4>Hello, {props.currentUser.name}!</h4>
-            <p>{location.name}</p>
+            <h3 className="new-event-head">Hello, {props.currentUser.name}!</h3>
             <hr/>
-            <form onSubmit={updateLocation}>
+            <form className="log-box" onSubmit={updateLocation}>
                 <input
                     type="text"
                     placeholder="Where Are You?"
@@ -74,6 +67,14 @@ export default function Profile(props) {
                     className="btn login-input text-center"
                 />
             </form>
+            <hr/>
+            <h5>Your Location</h5>
+            <div className="log-box">
+                <div className="event-box">
+                    <div className="friend-icon fas fa-map-marker-alt"/>
+                    <h6 className="location-text">{location.name}</h6>
+                </div>
+            </div>
         </div>
     )
 }

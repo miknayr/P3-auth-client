@@ -18,18 +18,23 @@ main {
     padding: 10px;
     background-image: url("./images/backsplash3.png");
     background-size: cover;
+    box-shadow: 5px 5px 5px black;
 }
 
 .log-box {
     position: relative;
     text-align: center;
     background-color: rgb(117,77,180);
-    margin: 50px 10px auto 10px;
+    margin: 10px;
     max-height: 350px;
     padding-bottom: 10px;
     opacity: .80;
     border-radius: 15px;
     overflow: scroll;
+}
+
+.height-mod {
+    max-height: 250px;
 }
 
 .header-box {
@@ -51,6 +56,7 @@ main {
 }
 
 .h6-header {
+    text-transform: uppercase;
     font-size: 24px;
     font-weight: bold;
     margin: 0 auto;
@@ -106,6 +112,7 @@ main {
 
 
 .component-header {
+    font-size: 24px;
     position: absolute;
     text-align: center;
     top: 20px;
@@ -115,6 +122,7 @@ main {
     border-radius: 15px;
     background-color: rgb(79,34,141);
     color: rgb(229,124,39);
+    text-transform: uppercase;
 }
 
 .nav-icon {
@@ -244,11 +252,14 @@ p {
 }
 
 .friend-icon {
+    position: absolute;
+    top: 8px;
+    left: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     color: rgb(249,144,59);
     background-color: rgb(35,18,95);
@@ -283,7 +294,9 @@ Track */
 }
 
 .event-box {
+    position: relative;
     background-color: white;
+    height: 55px;
     margin: 20px 10px;
     padding: 20px auto;
     border-radius: 15px;
@@ -294,6 +307,46 @@ Track */
     font-size: 20px;
 }
 
+.location-text {
+    font-size: 24px;
+    position: absolute;
+    top: 0.5em;
+    left: 5em;
+}
+
+.no-friend-text {
+    font-size: 24px;
+    position: absolute;
+    top: 0.5em;
+    left: 3em;
+}
+
+.no-user-text {
+    position: absolute;
+    top: 1em;
+    left: 4em;
+}
+
 #friendbox {
     overflow:auto;
+}
+
+.delete-text {
+    position: absolute;
+    top: 70px;
+    right: 40px;
+    background-color: red;
+    color: white;
+    font-size: 24px;
+    padding: 5px;
+    text-align: center;
+    opacity: .50;
+    border-radius: 15px;
+    transition-duration: 0.2s;
+    text-transform: uppercase;
+}
+
+.delete-text:hover {
+    opacity: 1;
+    transition-duration: 0.2s;
 }
