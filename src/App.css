@@ -308,7 +308,13 @@ Track */
     position: absolute;
     top: 0.5em;
     left: 5em;
+}
 
+.no-friend-text {
+    font-size: 24px;
+    position: absolute;
+    top: 0.5em;
+    left: 3em;
 }
 
 #friendbox {
