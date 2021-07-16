@@ -1,6 +1,4 @@
-import { useState 
-    //, useEffect 
-        } from "react"
+import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
 // do i need jwt token
 // import jwt from 'jsonwebtoken'
@@ -9,6 +7,7 @@ import Login from'./Login'
 // import { useState } from 'react'
 
 export default function Events  (props) {
+    const [events, setEvents] = useState([])
     // set to app level pass down to events?
     const [eventName, setEventName] = useState('')
     const [location, setLocation] = useState('')
@@ -20,11 +19,25 @@ export default function Events  (props) {
         try {
             e.preventDefault()
             const requestBody = { eventName, location, friend }
-            const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)
+            await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)   
+
         } catch (err){
             console.log(err)        
-        }
-    }
+        }}
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`)
+        .then((response) => {
+            setEvents(response.data.events)
+            console.log(events)
+        })
+    })
+    let myEvents = events.map(e => {
+        return(
+            <div>
+                <h6>{e.name}</h6>
+            </div>
+        )
+    })
     if (!props.currentUser) return (
         <Redirect 
             to="/"
@@ -62,6 +75,7 @@ export default function Events  (props) {
                 </div>
                 <input type='submit' value='add event' />
             </form>
+            <h5>Upcoming Events</h5>
+                <div>{myEvents}</div>
                 </div>
-    )
-}
+    )}
