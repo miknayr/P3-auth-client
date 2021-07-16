@@ -26,6 +26,8 @@ export default function Friends(props) {
             const requestBody = { name }
 
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
+                .then(res => console.log(res))
+                .catch(err => console.log(err))
         } catch (err) {
             if (err.response.status === 400) {
 
@@ -38,25 +40,28 @@ export default function Friends(props) {
     }
 
     // DELETE FRIEND - - - - - - - - - - - - - - - -
-    const deleteFriend = async (e) => {
+    const deleteFriend = async (e, name) => {
         try {
             e.preventDefault()
-            const requestBody = { deleteName }
-            await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
+            const requestBody = { name }
+            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, { data: requestBody })
         } catch (err) {
             console.dir(err)
         }
     }
 
     // GENERATE FRONTEND FRIENDS DISPLAY - - - - - - - - - - - - - - - -
-    let myFriends = friends.map(e => {
+    let myFriends = friends.map(friend => {
         return (
             <div className="event-box">
                 <div className="friend-icon fas fa-user" />
-                <h6>{e.name}</h6>
-                <form onSubmit={deleteFriend}>
-                    <input type="text" name={e.name} hidden />
-                    <input onClick={(e) => setDeleteName(e.target.name)} name={e.name} class="btn" type="submit" value="Delete" />
+                <h6>{friend.name}</h6>
+                <form onSubmit={(e) => deleteFriend(e, friend.name)}>
+                    <input 
+                        class="btn" 
+                        type="submit" 
+                        value="Delete"
+                    />
                 </form>
             </div>
         )

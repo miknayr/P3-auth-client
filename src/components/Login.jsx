@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Redirect } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import jwt from 'jsonwebtoken'
 import Home from './Home'

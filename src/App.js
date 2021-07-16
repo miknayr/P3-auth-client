@@ -1,15 +1,12 @@
 import './App.css';
 import Login from './components/Login.jsx'
+import Register from './components/Register.jsx'
 import Navbar from './components/Navbar.jsx'
 import Home from './components/Home.jsx'
-import Profile from './components/Profile'
-import Register from './components/Register.jsx'
-import Friends from './components/Friends.jsx'
-
-import Events from './components/Events'
 import { Location } from './components/Location'
-
-
+import Profile from './components/Profile'
+import Friends from './components/Friends.jsx'
+import Events from './components/Events'
 
 import {
     BrowserRouter as Router,
