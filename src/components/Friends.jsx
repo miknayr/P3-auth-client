@@ -5,7 +5,6 @@ import Login from './Login'
 
 export default function Friends(props) {
     const [name, setName] = useState("")
-    const [deleteName, setDeleteName] = useState("")
     const [message, setMessage] = useState("")
     const [friends, setFriends] = useState([])
 
@@ -24,13 +23,9 @@ export default function Friends(props) {
         try {
             e.preventDefault()
             const requestBody = { name }
-
             await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, requestBody)
-                .then(res => console.log(res))
-                .catch(err => console.log(err))
         } catch (err) {
             if (err.response.status === 400) {
-
                 setMessage('Your friend is not registered')
                 console.dir(message)
             } else {
@@ -54,7 +49,7 @@ export default function Friends(props) {
     let myFriends = friends.map(friend => {
         return (
             <div className="event-box">
-                <div className="friend-icon fas fa-user" />
+                <div className="friend-icon fas fa-heart" />
                 <h6>{friend.name}</h6>
                 <form onSubmit={(e) => deleteFriend(e, friend.name)}>
                     <input 
@@ -67,7 +62,7 @@ export default function Friends(props) {
         )
     })
 
-    // GENERATE NO FRIENDS DISPLAY
+    // GENERATE NO FRIENDS DISPLAY - - - - - - - - - - - - - - - -
     let noFriends = (
         <div className="event-box">
             <div className="friend-icon fas fa-sad-tear"/>
