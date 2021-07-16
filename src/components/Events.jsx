@@ -93,13 +93,11 @@ export default function Events(props) {
                         onChange={(e) => setEventName(e.target.value)}
                         value={eventName}
                     />
-                    <input
-                        className="login-input"
-                        type='text'
-                        placeholder='Where?'
-                        onChange={(e) => setLocation(e.target.value)}
-                        value={location}
-                    />
+                    <select className="login-input" type='text'  placeholder='Where?'  onChange={(e) => setLocation(e.target.value)} value={location}>
+                        <option value="Barn">Barn</option>
+                        <option value="Stage">Stage</option>
+                        <option value="Sahara">Sahara</option>
+                    </select>
                     <input
                         className="login-input"
                         type='text'
@@ -134,5 +132,4 @@ export default function Events(props) {
           </div>
         
 
-        
     )}
