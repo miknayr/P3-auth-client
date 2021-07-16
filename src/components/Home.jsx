@@ -7,6 +7,7 @@ import axios from 'axios'
 export default function Home(props) {
     const [locations, setLocations] = useState([])
 
+    // SET DATA FOR ALL LOCATIONS - - - - - - - - - - - - - - - - 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/location`)
         .then(foundLocations => {
@@ -15,6 +16,7 @@ export default function Home(props) {
         .catch(err => console.log(err))
     },[])
 
+    // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -23,6 +25,7 @@ export default function Home(props) {
         />
     )
     
+    // RETURN  - - - - - - - - - - - - - - - - 
     return (
         <>
             <h2 className="component-header">Home</h2>

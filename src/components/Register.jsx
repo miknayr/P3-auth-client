@@ -10,6 +10,7 @@ const Register = (props) => {
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
 
+    // REGISTER/LOGIN NEW USER  - - - - - - - - - - - - - - - -
     const handleSubmit = async (e) => {
         try {
             e.preventDefault()
@@ -36,6 +37,7 @@ const Register = (props) => {
         }
     }
 
+    // REDIRECT ON USER ERROR  - - - - - - - - - - - - - - - -
     if (props.currentUser) return (
         <Redirect 
             to='/home' 
@@ -44,6 +46,7 @@ const Register = (props) => {
         />
     )
     
+    // RETURN  - - - - - - - - - - - - - - - -
     return (
         <div className="log-box">
             <div className="header-box">
