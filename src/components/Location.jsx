@@ -6,7 +6,7 @@ export const Location = (props) => {
     const [localInfo, setLocalInfo] = useState(props.location.localInfo.data)
     console.log(localInfo.user)
 
-    // GENERATE FRONTEND FRIENDS DISPLAY - - - - - - - - - - - - - - - -
+    // GENERATE FRONTEND USERS DISPLAY - - - - - - - - - - - - - - - -
     let myUsers = localInfo.user.map(user => {
         return (
             <div className="event-box">
@@ -16,13 +16,14 @@ export const Location = (props) => {
         )
     })
 
-    // GENERATE NO FRIENDS DISPLAY
+    // GENERATE NO USER DISPLAY - - - - - - - - - - - - - - - -
     let noUsers = (
         <div className="event-box">
             <div className="friend-icon fas fa-sad-tear"/>
             <h6 className="no-user-text">Nobody Here But Us Chickens!</h6>
         </div>
     )
+    
     // REDIRECT ON USER ERROR  - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
         <Redirect 
