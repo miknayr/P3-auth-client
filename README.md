@@ -4,6 +4,7 @@ Get Lost, Meet Again.
 ## images of app
 ![login](src/images/login.png)
 ![home](src/images/home.png)
+![getfriends](src/images/friends.png)
 
 Link to app 
 https://friendly-sinoussi-f96db3.netlify.app/
