@@ -1,19 +1,27 @@
 # Project Title: Totemize
 Get Lost, Meet Again.
 
+## links
+Link to app 
+https://friendly-sinoussi-f96db3.netlify.app/
+
+Link to server repo
+https://github.com/miknayr/MERN-Auth-Server
+
 ## images of app
 ![login](src/images/login.png)
 ![home](src/images/home.png)
 ![getfriends](src/images/friends.png)
 
-Link to app 
-https://friendly-sinoussi-f96db3.netlify.app/
 
 ## How//What
 
 Our app was created by two designers and four developers during a Hackathon sprint. We all concluded that its hard to find friends during large gatherings or places that friends can easily get lost and we wanted something that could solve the issue all in one rather than through multiple apps. Totemize was created at that moment.
 
 Designers worked on the front end, giving us a general look and feel, branding and reasoning behind what we were doing and the developers put art into practical existance to work as imagined. Through collaboration and communication our team went through multiple check-ins, constant commits as well as offering help as needed and debugging together. In the end, we successfully created an app with full CRUD functionality for users and friends and future iterations would add full crud functionality to events.
+
+## Tech used
+HTML/CSS/Javascript, Mongo, Express, React, Node (MERN), Axios and Json Web Tokens, Figma, Zeplin, Google Suite/Drive, Slack
 
 ## installation instructions
 please use `npm i` to install axios, jsonwebtoken, react, react-dom, and react-router-dom.
