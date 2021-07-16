@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Redirect } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import axios from 'axios'
 import Login from './Login'
 
@@ -7,9 +7,7 @@ export default function Profile(props) {
     const [placeName, setPlaceName] = useState([])
     const [location, setLocation] = useState([])
 
-
     // SET CURRENT USER LOCATION  - - - - - - - - - - - - - - - - 
-
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
         .then(response => {
@@ -36,19 +34,22 @@ export default function Profile(props) {
     }
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
-
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
             component={ Login } 
             currentUser={ props.currentUser }
         />
-
     ) 
 
     // RETURN - - - - - - - - - - - - - - - - 
     return (
         <div>
+            <Link to={{
+                    pathname:'/deleteprofile'
+                }}>
+                <h5 className="delete-text">Delete</h5>
+            </Link>
             <h2 className="component-header">Profile</h2>
             <h3 className="new-event-head">Hello, {props.currentUser.name}!</h3>
             <hr/>

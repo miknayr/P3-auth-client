@@ -28,13 +28,26 @@ export default function Events  (props) {
             console.log(events)
         })
     })
+
+    // GENERATE FRONTEND EVENTS DISPLAY - - - - - - - - - - - - - - - -
     let myEvents = events.map(e => {
-        return(
-            <div>
+        return (
+            <div className="event-box">
+                <div className="friend-icon fas fa-exclamation"/>
                 <h6>{e.name}</h6>
             </div>
         )
     })
+
+    // GENERATE NO EVENTS DISPLAY
+    let noEvents = (
+        <div className="event-box">
+            <div className="friend-icon fas fa-sad-tear"/>
+            <h6 className="no-friend-text">Get a Life!</h6>
+        </div>
+    )
+
+    // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
         <Redirect 
             to="/"
@@ -79,6 +92,8 @@ export default function Events  (props) {
             </form>
             <hr/>
             <h5>Upcoming Events</h5>
-                <div>{myEvents}</div>
-                </div>
+            <div className="log-box">
+                {events.length > 0 ? myEvents : noEvents}
+            </div>
+        </div>
     )}

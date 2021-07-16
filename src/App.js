@@ -5,6 +5,7 @@ import Navbar from './components/Navbar.jsx'
 import Home from './components/Home.jsx'
 import { Location } from './components/Location'
 import Profile from './components/Profile'
+import { DeleteProfile } from './components/DeleteProfile'
 import Friends from './components/Friends.jsx'
 import Events from './components/Events'
 
@@ -91,6 +92,15 @@ function App() {
                         path="/profile"
                         render={props =>
                             currentUser ? <Profile {...props}  
+                                currentUser={ currentUser } 
+                                handleLogout={handleLogout} 
+                            /> : <Redirect to='/'/>
+                        }
+                    />
+                    <Route 
+                        path="/deleteprofile"
+                        render={props =>
+                            currentUser ? <DeleteProfile {...props}  
                                 currentUser={ currentUser } 
                                 handleLogout={handleLogout} 
                             /> : <Redirect to='/'/>
