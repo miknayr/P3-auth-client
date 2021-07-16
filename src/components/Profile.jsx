@@ -54,6 +54,19 @@ export default function Profile(props) {
             <h3 className="new-event-head">Hello, {props.currentUser.name}!</h3>
             <hr/>
             <form className="log-box" onSubmit={updateLocation}>
+                <label > Where are you </label>
+                <select className="location-label" value={placeName} onChange={e => setPlaceName(e.target.value)}>
+                    <option value="Barn">Barn</option>
+                    <option value="Stage">Stage</option>
+                    <option value="Sahara">Sahara</option>
+                </select>
+                <input
+                    type='submit'
+                    value='Update'
+                    className="btn login-input text-center"
+                />
+            </form>
+            {/* <form className="log-box" onSubmit={updateLocation}>
                 <input
                     type="text"
                     placeholder="Where Are You?"
@@ -66,7 +79,7 @@ export default function Profile(props) {
                     value='Update'
                     className="btn login-input text-center"
                 />
-            </form>
+            </form> */}
             <hr/>
             <h5>Your Location</h5>
             <div className="log-box">
