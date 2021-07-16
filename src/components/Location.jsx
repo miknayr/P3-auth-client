@@ -5,15 +5,8 @@ import Login from'./Login'
 
 export const Location = (props) => {
     const [localInfo, setLocalInfo] = useState(props.location.localInfo.data)
-    // MAP FRIENDS FROM LOCALINFO
-    let friendList = localInfo.friends.map(e => {
-        return (
-            <div className="event-box">
-                {e.name}
-            </div>
-        )
-    })
-    // REDIRECT ON USER ERROR
+
+    // REDIRECT ON USER ERROR  - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
         <Redirect 
             to='/' 
@@ -21,12 +14,12 @@ export const Location = (props) => {
             currentUser={ props.currentUser }
         />
     ) 
-    // RETURN
+    
+    // RETURN  - - - - - - - - - - - - - - - -
     return (
         <div>
             <h2 className="component-header">{localInfo.name}</h2>
             <div className="log-box">
-                
             </div>
         </div>
     )

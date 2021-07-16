@@ -10,6 +10,7 @@ export default function Login(props) {
     const [password, setPassword] = useState('')
     const [message, setMessage] = useState('')
 
+    // LOGIN USER - - - - - - - - - - - - - - - -
     const handleSubmit = async (e) => {
         try {
             e.preventDefault()
@@ -36,6 +37,7 @@ export default function Login(props) {
         }
     }
 
+    // REDIRECT ON USER ERROR  - - - - - - - - - - - - - - - -
     if (props.currentUser) return (
         <Redirect 
             to='/home' 
@@ -44,7 +46,8 @@ export default function Login(props) {
         />
     ) 
 
-  return (
+    // RETURN  - - - - - - - - - - - - - - - - 
+    return (
         <div className="log-box">
             <div className="header-box">
                 <div className="text-box">

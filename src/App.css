@@ -265,27 +265,22 @@ p {
 .friend-list {
     width: 100%;
     height: 60%;
-    overflow: auto;
 }
-
-::-webkit-scrollbar {
-    width: 10px;
-  }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+Track */
+::-webkit-scrollbar-track {
     background: #f1f1f1; 
-  }
+}
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888; 
-  }
+}
   
-  /* Handle on hover */
+/* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+}
 
 .event-box {
     background-color: white;
@@ -300,6 +295,5 @@ p {
 }
 
 #friendbox {
-  overflow:auto;
-
+    overflow:auto;
 }
