@@ -199,6 +199,10 @@ main {
     opacity: .70;
 }
 
+.location-label {
+    margin: 5px 15px;
+}
+
 .map-box {
     text-align: center;
     position: relative
