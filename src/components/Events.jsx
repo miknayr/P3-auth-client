@@ -4,50 +4,55 @@ import { Redirect } from 'react-router-dom'
 // import jwt from 'jsonwebtoken'
 import axios from 'axios'
 import Login from'./Login'
-// import { useState } from 'react'
+// import { useState } from 'rea3ct'
 
-export default function Events  (props) {
+export default function Events(props) {
     const [events, setEvents] = useState([])
     // set to app level pass down to events?
     const [eventName, setEventName] = useState('')
     const [location, setLocation] = useState('')
     const [friend, setFriend] = useState('')
+
+    useEffect(() => {
+        // make axios request to get currentuser events 
+        async function runRequest(){
+            const response = await axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`)
+            setEvents(response.data.events)
+        }
+        runRequest()
+        // update value of events to be currentUser events
+    }, [events])
     // useEffect, maybe higher app level
     // seems to be submitting without useEffect?
     // trying to get db to create
-    async function handleSubmit(e) {
+    function handleSubmit(e) {
+        e.preventDefault()
         try {
-            e.preventDefault()
             const requestBody = { eventName, location, friend }
-            await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)   
+            console.log(requestBody)
+            async function run() { 
+                console.log('this ran')
+                const response = await axios.post(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`, requestBody)   
+                setEvents(response.data.events)
+            }
+            run()
+            // responseData = Promise.all(run())
         } catch (err){
             console.log(err)        
-        }}
-    useEffect(() => {
-        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`)
-        .then((response) => {
-            setEvents(response.data.events)
-            console.log(events)
-        })
-    })
-    let myEvents = events.map(e => {
-        return(
-            <div>
-                <h6>{e.name}</h6>
-            </div>
-        )
-    })
-    if (!props.currentUser) return (
-        <Redirect 
-            to="/"
-            component={ Login }
-            currentUser={ props.currentUser }
-        />
-    )
+        }
+        // console.log(responseData)
+    }
+    // if (!props.currentUser) {return (
+    //     <Redirect 
+    //         to="/"
+    //         component={ Login }
+    //         currentUser={ props.currentUser }
+    //     />
+    // )}
     return (
         <div>
             <h3 className="new-event-head">Enter a new event</h3>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={(e) => handleSubmit(e)}>
                 <div>
                     <input
                     id='meetup-title'
@@ -71,9 +76,14 @@ export default function Events  (props) {
                     value={friend}
                     />
                 </div>
-                <input type='submit' value='add event' />
+                <input type='submit' value='add event'  />
             </form>
             <h5>Upcoming Events</h5>
-                <div>{myEvents}</div>
+                <div>{events.map((item) => {
+                    return (
+                        <p>{item.eventName}</p>
+                    )
+                })} 
+                </div>
                 </div>
     )}

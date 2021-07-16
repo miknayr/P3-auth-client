@@ -11,6 +11,7 @@ export default function Profile(props) {
         .then((response) => {
             setFriends(response.data.friends)
             console.log(friends)
+            console.log(props.currentUser.id)
         })
         .catch((err) => console.log(err))
     },[])

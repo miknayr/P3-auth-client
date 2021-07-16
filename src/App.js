@@ -28,7 +28,7 @@ import jwt from 'jsonwebtoken'
 function App() {
     // state holds user data if the user is logged in
     const [currentUser, setCurrentUser] = useState(null)
-
+    console.log(currentUser, '🍠')
     // if navigates away automatically log them in
     useEffect(() => {
         // get the token from local storage
@@ -37,6 +37,7 @@ function App() {
         if (token) {
             setCurrentUser(jwt.decode(token))
         } else {
+            console.log('🍾')
             setCurrentUser(null)
         }
     }, [])
@@ -45,6 +46,7 @@ function App() {
     const handleLogout = () => {
         if (localStorage.getItem('jwtToken')) {
             localStorage.removeItem('jwtToken')
+            console.log('🥫')
             setCurrentUser(null)
         }
     }
