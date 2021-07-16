@@ -44,7 +44,7 @@ export default function Friends(props) {
         try {
             e.preventDefault()
             const requestBody = { name }
-            const response = await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, { data: requestBody })
+            await axios.delete(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/friends/${props.currentUser.id}`, { data: requestBody })
         } catch (err) {
             console.dir(err)
         }
