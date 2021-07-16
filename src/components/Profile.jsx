@@ -7,6 +7,7 @@ export default function Profile(props) {
     const [placeName, setPlaceName] = useState([])
     const [location, setLocation] = useState([])
 
+
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`)
         .then(response => {
@@ -14,7 +15,8 @@ export default function Profile(props) {
             console.log(location)
         })
         .catch(err => console.log(err))
-    },[location])
+    },[])
+
 
     const updateLocation = async (e) => {
         try {
@@ -23,7 +25,9 @@ export default function Profile(props) {
             await axios.put(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/profile/${props.currentUser.id}`, requestBody)
             .then(res => {
                 console.log(res)
+          
             })
+            
             .catch(err => {
                 console.log(err)
             })
@@ -31,6 +35,7 @@ export default function Profile(props) {
             console.log(err)
         }
     }
+
     
     // REDIRECT ON USER ERROR
     if (!props.currentUser) return (
@@ -40,6 +45,12 @@ export default function Profile(props) {
             currentUser={ props.currentUser }
         />
     ) 
+    // if (refresh === true) return (
+    //   <Redirect
+    //     to='/profile'
+    //     component={ Profile }
+    //   />
+    // )
 
     // RETURN
     return (
