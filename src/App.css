@@ -76,9 +76,8 @@ main {
     color: rgb(249,144,59);
 }
 
-.register {
-    text-decoration: none !important;
-    cursor: default;
+.register:hover{
+    color: white;
 }
 
 .tiny-text {
@@ -104,6 +103,7 @@ main {
 .btn:hover {
     opacity: .70;
 }
+
 
 .component-header {
     position: absolute;
