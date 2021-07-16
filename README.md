@@ -2,9 +2,6 @@
 Get Lost, Meet Again.
 
 ## links
-Link to app 
-https://friendly-sinoussi-f96db3.netlify.app/
-
 Link to server repo
 https://github.com/miknayr/MERN-Auth-Server
 
