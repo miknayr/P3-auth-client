@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
-// do i need jwt token
-// import jwt from 'jsonwebtoken'
 import axios from 'axios'
 import Login from'./Login'
-// import { useState } from 'rea3ct'
 
 export default function Events(props) {
     const [events, setEvents] = useState([])
@@ -39,52 +36,101 @@ export default function Events(props) {
             // responseData = Promise.all(run())
         } catch (err){
             console.log(err)        
-        }
-        // console.log(responseData)
-    }
-    // if (!props.currentUser) {return (
-    //     <Redirect 
-    //         to="/"
-    //         component={ Login }
-    //         currentUser={ props.currentUser }
-    //     />
-    // )}
+
+        }}
+    useEffect(() => {
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/events/${props.currentUser.id}`)
+        .then((response) => {
+            setEvents(response.data.events)
+            console.log(events)
+        })
+    })
+
+    
+    // GENERATE FRONTEND EVENTS DISPLAY - - - - - - - - - - - - - - - -
+    let myEvents = events.map(e => {
+        return (
+            <div className="event-box">
+                <div className="friend-icon fas fa-exclamation"/>
+                <h6>{e.name}</h6>
+
+                <h3 className="new-event-head">Enter a new event</h3>
+                <form onSubmit={(e) => handleSubmit(e)}>
+                  </form>
+            </div>
+            
+        )
+    })
+
+    // GENERATE NO EVENTS DISPLAY
+    let noEvents = (
+        <div className="event-box">
+            <div className="friend-icon fas fa-sad-tear"/>
+            <h6 className="no-friend-text">Get a Life!</h6>
+        </div>
+    )
+
+    // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - -
+    if (!props.currentUser) return (
+        <Redirect 
+            to="/"
+            component={ Login }
+            currentUser={ props.currentUser }
+        />
+    )
     return (
         <div>
-            <h3 className="new-event-head">Enter a new event</h3>
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <h2 className="component-header">Events</h2>
+            <h3 className="new-event-head">Enter a New Event</h3>
+            <hr/>
+            <form className="log-box" onSubmit={handleSubmit}>
+
                 <div>
                     <input
-                    id='meetup-title'
-                    type='text'
-                    placeholder='meetup title'
-                    onChange={(e) => setEventName(e.target.value)}
-                    value={eventName}
+                        className="login-input"
+                        type='text'
+                        placeholder='What?'
+                        onChange={(e) => setEventName(e.target.value)}
+                        value={eventName}
                     />
                     <input
-                    id='location-input'
-                    type='text'
-                    placeholder='meetup location'
-                    onChange={(e) => setLocation(e.target.value)}
-                    value={location}
+                        className="login-input"
+                        type='text'
+                        placeholder='Where?'
+                        onChange={(e) => setLocation(e.target.value)}
+                        value={location}
                     />
                     <input
-                    id='friends-input'
-                    type='text'
-                    placeholder='ping friends'
-                    onChange={(e) => setFriend(e.target.value)}
-                    value={friend}
+                        className="login-input"
+                        type='text'
+                        placeholder='Who?'
+                        onChange={(e) => setFriend(e.target.value)}
+                        value={friend}
                     />
                 </div>
-                <input type='submit' value='add event'  />
+
+                <input 
+                    className="btn login-input"
+                    type='submit' 
+                    value='add event'
+                />
+
             </form>
+            <hr/>
             <h5>Upcoming Events</h5>
-                <div>{events.map((item) => {
-                    return (
-                        <p>{item.eventName}</p>
-                    )
-                })} 
-                </div>
-                
-            </div>
+
+            <div className="log-box">
+
+              <div>{events.map((item) => {
+                      return (
+                          <p>{item.eventName}</p>
+                      )
+                  })} 
+                  </div>
+              </div>
+
+                {/* {events.length > 0 ? myEvents : noEvents} */}
+          </div>
+        
+
     )}
