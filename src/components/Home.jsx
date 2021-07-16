@@ -12,9 +12,10 @@ export default function Home(props) {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/location`)
         .then(foundLocations => {
             setLocations(foundLocations.data)
+            console.log(locations)
         })
         .catch(err => console.log(err))
-    },[])
+    },[locations])
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - - 
     if (!props.currentUser) return (
