@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react"
 import { Redirect } from 'react-router-dom'
-// do i need jwt token
-// import jwt from 'jsonwebtoken'
 import axios from 'axios'
 import Login from'./Login'
-// import { useState } from 'react'
 
 export default function Events  (props) {
     const [events, setEvents] = useState([])
@@ -47,34 +44,40 @@ export default function Events  (props) {
     )
     return (
         <div>
-
-            <h3 className="new-event-head">Enter a new event</h3>
-            <form onSubmit={handleSubmit}>
+            <h2 className="component-header">Events</h2>
+            <h3 className="new-event-head">Enter a New Event</h3>
+            <hr/>
+            <form className="log-box" onSubmit={handleSubmit}>
                 <div>
                     <input
-                    id='meetup-title'
-                    type='text'
-                    placeholder='meetup title'
-                    onChange={(e) => setEventName(e.target.value)}
-                    value={eventName}
+                        className="login-input"
+                        type='text'
+                        placeholder='What?'
+                        onChange={(e) => setEventName(e.target.value)}
+                        value={eventName}
                     />
                     <input
-                    id='location-input'
-                    type='text'
-                    placeholder='meetup location'
-                    onChange={(e) => setLocation(e.target.value)}
-                    value={location}
+                        className="login-input"
+                        type='text'
+                        placeholder='Where?'
+                        onChange={(e) => setLocation(e.target.value)}
+                        value={location}
                     />
                     <input
-                    id='friends-input'
-                    type='text'
-                    placeholder='ping friends'
-                    onChange={(e) => setFriend(e.target.value)}
-                    value={friend}
+                        className="login-input"
+                        type='text'
+                        placeholder='Who?'
+                        onChange={(e) => setFriend(e.target.value)}
+                        value={friend}
                     />
                 </div>
-                <input type='submit' value='add event' />
+                <input 
+                    className="btn login-input"
+                    type='submit' 
+                    value='add event'
+                />
             </form>
+            <hr/>
             <h5>Upcoming Events</h5>
                 <div>{myEvents}</div>
                 </div>

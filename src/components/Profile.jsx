@@ -45,22 +45,14 @@ export default function Profile(props) {
         />
 
     ) 
-    // if (refresh === true) return (
-    //   <Redirect
-    //     to='/profile'
-    //     component={ Profile }
-    //   />
-    // )
-
 
     // RETURN - - - - - - - - - - - - - - - - 
     return (
         <div>
             <h2 className="component-header">Profile</h2>
-            <h4>Hello, {props.currentUser.name}!</h4>
-            <p>{location.name}</p>
+            <h3 className="new-event-head">Hello, {props.currentUser.name}!</h3>
             <hr/>
-            <form onSubmit={updateLocation}>
+            <form className="log-box" onSubmit={updateLocation}>
                 <input
                     type="text"
                     placeholder="Where Are You?"
@@ -74,6 +66,14 @@ export default function Profile(props) {
                     className="btn login-input text-center"
                 />
             </form>
+            <hr/>
+            <h5>Your Location</h5>
+            <div className="log-box">
+                <div className="event-box">
+                    <div className="friend-icon fas fa-map-marker-alt"/>
+                    <h6 className="location-text">{location.name}</h6>
+                </div>
+            </div>
         </div>
     )
 }

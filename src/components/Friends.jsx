@@ -58,7 +58,7 @@ export default function Friends(props) {
                 <h6>{friend.name}</h6>
                 <form onSubmit={(e) => deleteFriend(e, friend.name)}>
                     <input 
-                        class="btn" 
+                        className="btn" 
                         type="submit" 
                         value="Delete"
                     />
@@ -80,7 +80,9 @@ export default function Friends(props) {
     return (
         <div>
             <h2 className="component-header">Friends</h2>
-            <form onSubmit={handleSubmit}>
+            <h3 className="new-event-head">Find a Friend</h3>
+            <hr/>
+            <form className="log-box" onSubmit={handleSubmit}>
                 <div className="text-center">
                     <input
                         type='text'
@@ -94,11 +96,13 @@ export default function Friends(props) {
                     <input
                         type='submit'
                         value='Add'
-                        className="btn login-input text-center"
+                        className="btn login-input"
                     />
                 </div>
             </form>
-            <div className="log-box">
+            <hr/>
+            <h5>Your Friends</h5>
+            <div className="log-box height-mod">
                 {myFriends}
             </div>
         </div>
