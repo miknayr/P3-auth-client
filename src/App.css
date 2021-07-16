@@ -29,11 +29,7 @@ main {
     margin: 10px;
     max-height: 350px;
     padding-bottom: 10px;
-<<<<<<< HEAD
-    opacity: .8;
-=======
     opacity: .80;
->>>>>>> main
     border-radius: 15px;
     overflow: scroll;
 }
@@ -103,12 +99,7 @@ main {
     margin-left: 35px;
 }
 
-<<<<<<< HEAD
-
-#forgot:hover {
-=======
 .tiny-text:hover {
->>>>>>> main
     text-decoration: underline;
 }
 
@@ -155,18 +146,12 @@ main {
     background-color: rgb(79,34,141);
     color: rgb(229,124,39);
 }
-<<<<<<< HEAD
-/* ~~~~ this was already hidden~~~~~ */
-/* .fa-map-marker {
-    background-color: rgb(253,146,140);
-=======
 
 .fa-map-marker-alt {
     position: absolute;
     color: purple;
     font-size: 22px;
     transition-duration: 0.2s;
->>>>>>> main
 }
 
 .map-tag {
@@ -343,8 +328,6 @@ Track */
     font-size: 20px;
 }
 
-<<<<<<< HEAD
-=======
 .location-text {
     font-size: 24px;
     position: absolute;
@@ -388,4 +371,3 @@ Track */
     opacity: 1;
     transition-duration: 0.2s;
 }
->>>>>>> main
