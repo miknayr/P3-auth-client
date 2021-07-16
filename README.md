@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Link to app 
 https://friendly-sinoussi-f96db3.netlify.app/
 
-## How
+## How//What
 
 Our app was created by two designers and four developers during a Hackathon sprint. We all concluded that its hard to find friends during large gatherings or places that friends can easily get lost and we wanted something that could solve the issue all in one rather than through multiple apps. Totemize was created at that moment.
 
