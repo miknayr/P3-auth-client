@@ -10,10 +10,7 @@ export default function Home(props) {
     // SET DATA FOR ALL LOCATIONS - - - - - - - - - - - - - - - - 
     useEffect(() => {
         axios.get(`${process.env.REACT_APP_SERVER_URL}/api-v1/users/location`)
-        .then(foundLocations => {
-            setLocations(foundLocations.data)
-            console.log(locations)
-        })
+        .then(foundLocations => { setLocations(foundLocations.data) })
         .catch(err => console.log(err))
     },[locations])
 
