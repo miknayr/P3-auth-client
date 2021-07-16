@@ -21,13 +21,15 @@ main {
 }
 
 .log-box {
+    position: relative;
     text-align: center;
     background-color: rgb(117,77,180);
     margin: 50px 10px auto 10px;
-    max-height: 300px;
+    max-height: 350px;
     padding-bottom: 10px;
     opacity: .80;
     border-radius: 15px;
+    overflow: scroll;
 }
 
 .header-box {
@@ -74,18 +76,17 @@ main {
     color: rgb(249,144,59);
 }
 
-.register {
-    text-decoration: none !important;
-    cursor: default;
+.register:hover{
+    color: white;
 }
 
-#forgot {
+.tiny-text {
     color: rgb(249,144,59);
     text-align: left;
     margin-left: 35px;
 }
 
-#forgot:hover {
+.tiny-text:hover {
     text-decoration: underline;
 }
 
@@ -101,6 +102,19 @@ main {
 
 .btn:hover {
     opacity: .70;
+}
+
+
+.component-header {
+    position: absolute;
+    text-align: center;
+    top: 20px;
+    right: 40px;
+    padding: 5px;
+    opacity: 0.8;
+    border-radius: 15px;
+    background-color: rgb(79,34,141);
+    color: rgb(229,124,39);
 }
 
 .nav-icon {
@@ -236,10 +250,10 @@ p {
     width: 25px;
     height: 25px;
     border-radius: 50%;
-    margin: 3px 10px auto 20px;
     color: rgb(249,144,59);
     background-color: rgb(35,18,95);
 }
+
 
 .friend-box {
     display: grid;
@@ -251,27 +265,22 @@ p {
 .friend-list {
     width: 100%;
     height: 60%;
-    overflow: auto;
 }
-
-::-webkit-scrollbar {
-    width: 10px;
-  }
   
-  /* Track */
-  ::-webkit-scrollbar-track {
+Track */
+::-webkit-scrollbar-track {
     background: #f1f1f1; 
-  }
+}
    
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #888; 
-  }
+}
   
-  /* Handle on hover */
+/* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #555; 
-  }
+}
 
 .event-box {
     background-color: white;
@@ -283,4 +292,8 @@ p {
 .event-box p {
     color: black;
     font-size: 20px;
+}
+
+#friendbox {
+    overflow:auto;
 }
