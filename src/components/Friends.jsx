@@ -52,20 +52,30 @@ export default function Friends(props) {
 
     // GENERATE FRONTEND FRIENDS DISPLAY - - - - - - - - - - - - - - - -
     let myFriends = friends.map(friend => {
-        return (
-            <div className="event-box">
-                <div className="friend-icon fas fa-user" />
-                <h6>{friend.name}</h6>
-                <form onSubmit={(e) => deleteFriend(e, friend.name)}>
-                    <input 
-                        className="btn" 
-                        type="submit" 
-                        value="Delete"
-                    />
-                </form>
-            </div>
-        )
+        if (friends.length > 0) {
+            return (
+                <div className="event-box">
+                    <div className="friend-icon fas fa-user" />
+                    <h6>{friend.name}</h6>
+                    <form onSubmit={(e) => deleteFriend(e, friend.name)}>
+                        <input 
+                            className="btn" 
+                            type="submit" 
+                            value="Delete"
+                        />
+                    </form>
+                </div>
+            )
+        } 
     })
+
+    // GENERATE NO FRIENDS DISPLAY
+    let noFriends = (
+        <div className="event-box">
+            <div className="friend-icon fas fa-sad-tear"/>
+            <h6 className="no-friend-text">Get some friends!</h6>
+        </div>
+    )
 
     // REDIRECT ON USER ERROR - - - - - - - - - - - - - - - -
     if (!props.currentUser) return (
@@ -103,7 +113,7 @@ export default function Friends(props) {
             <hr/>
             <h5>Your Friends</h5>
             <div className="log-box height-mod">
-                {myFriends}
+                {friends.length > 0 ? myFriends : noFriends}
             </div>
         </div>
     )
