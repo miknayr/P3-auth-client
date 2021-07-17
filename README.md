@@ -1,4 +1,4 @@
-# Project Title: Totemize
+# Totemize
 Get Lost, Meet Again.
 
 ## links
